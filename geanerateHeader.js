@@ -20,6 +20,6 @@ header.forEach((val)=>{
     if(!val.disabled)
     output+=`\n${template(val)}`
 })
-return `      parameters:`+output;
+return "\n"+`      parameters:`+output;
 }
-console.log(generateHeader(header));
+module.exports={generateHeader}

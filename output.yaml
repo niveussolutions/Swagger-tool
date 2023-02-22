@@ -1,0 +1,465 @@
+openapi: 3.0.0
+info:
+  title: Signdesk Copy
+  description: please add your description
+  version: 1.0.0
+
+servers:
+  - url: https://{{hostname}}
+
+paths:
+  /docverification/api/sandbox/signRequest:
+    post:
+      parameters:
+             - in: header
+               name: Content-Type
+               required: true
+               schema:
+                 type: string
+               example:
+                 application/json
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                 Sodel
+             - in: header
+               name: serviceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 sandbox
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                widget_configuration:
+                  type: string
+                signers_info:
+                  type: array
+                  items :
+                   type : object
+                   properties:
+                     trigger_esign_request:
+                       type: boolean
+                     signer_validation_inputs:
+                       type: string
+                     signer_remarks:
+                       type: string
+                     signer_ref_id:
+                       type: string
+                     signer_position:
+                       type: object
+                       properties:
+                         appearance:
+                           type: array
+                           items :
+                            type : object
+                            properties:
+                              y2:
+                                type: number
+                              y1:
+                                type: number
+                              x2:
+                                type: number
+                              x1:
+                                type: number
+                     signer_name:
+                       type: string
+                     signer_mobile:
+                       type: string
+                     signer_email:
+                       type: string
+                     signature_type:
+                       type: string
+                     sequence:
+                       type: string
+                     page_number:
+                       type: string
+                     esign_type:
+                       type: string
+                     document_to_be_signed:
+                       type: string
+                     authentication_mode:
+                       type: string
+                     access_type:
+                       type: string
+                remarks:
+                  type: string
+                reference_id:
+                  type: string
+                final_copy_recipients:
+                  type: string
+                enable_email_notification:
+                  type: string
+                documents:
+                  type: array
+                  items :
+                   type : object
+                   properties:
+                     signature_sequence:
+                       type: string
+                     reference_doc_id:
+                       type: string
+                     custom:
+                       type: string
+                     content_type:
+                       type: string
+                     content:
+                       type: string
+                docket_title:
+                  type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+  /docverification/api/estamp/geteStampPaper:
+    post:
+      parameters:
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                 Sodel
+             - in: header
+               name: serviceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 LIMITBLOCKING
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reference_id:
+                  type: string
+                transaction_id:
+                  type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+  /docverification/api/estamp/requestStampPaper:
+    post:
+      parameters:
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                 Sodel
+             - in: header
+               name: serviceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 LIMITBLOCKING
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                base64String:
+                  type: string
+                first_party_name:
+                  type: string
+                second_party_name:
+                  type: string
+                duty_payer_phone_number:
+                  type: string
+                custom:
+                  type: object
+                  properties:
+                    parameter_name:
+                      type: string
+                first_party_address:
+                  type: object
+                  properties:
+                    street_address:
+                      type: string
+                    locality:
+                      type: string
+                    city:
+                      type: string
+                    state:
+                      type: string
+                    pincode:
+                      type: string
+                    country:
+                      type: string
+                stamp_amount:
+                  type: string
+                consideration_amount:
+                  type: string
+                stamp_state:
+                  type: string
+                stamp_type:
+                  type: string
+                stamp_duty_paid_by:
+                  type: string
+                document_category:
+                  type: string
+                document_reference_no:
+                  type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+  /docverification/api/sandbox/getSignatureStatus:
+    post:
+      parameters:
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                 Sodel
+             - in: header
+               name: serviceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 GETSIGNSTATUS
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                document_id:
+                  type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+  /docverification/api/estamp/getEsignAndEstampRequest:
+    post:
+      parameters:
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                 Sodel
+             - in: header
+               name: serviceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 GETSIGNSTATUS
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reference_id:
+                  type: string
+                source_type:
+                  type: string
+                self_signer:
+                  type: string
+                document_info:
+                  type: object
+                  properties:
+                    docket_title:
+                      type: string
+                    docket_description:
+                      type: string
+                    signature_sequence:
+                      type: string
+                    signature_type:
+                      type: string
+                signer_info:
+                  type: array
+                  items :
+                   type : object
+                   properties:
+                     trigger_esign_request:
+                       type: boolean
+                     signer_position:
+                       type: object
+                       properties:
+                         appearance:
+                           type: string
+                         page:
+                           type: string
+                     signer_ref_id:
+                       type: string
+                     signer_name:
+                       type: string
+                     signer_email:
+                       type: string
+                     signer_remarks:
+                       type: string
+                     signer_mobile:
+                       type: string
+                     esign_type:
+                       type: string
+                     signing_mode:
+                       type: string
+                     sequence:
+                       type: string
+                first_party_name:
+                  type: string
+                second_party_name:
+                  type: string
+                first_party_address:
+                  type: object
+                  properties:
+                    street_address:
+                      type: string
+                    locality:
+                      type: string
+                    city:
+                      type: string
+                    state:
+                      type: string
+                    pincode:
+                      type: string
+                    country:
+                      type: string
+                second_party_address:
+                  type: object
+                  properties:
+                    street_address:
+                      type: string
+                    locality:
+                      type: string
+                    city:
+                      type: string
+                    state:
+                      type: string
+                    pincode:
+                      type: string
+                    country:
+                      type: string
+                document_reference_no:
+                  type: string
+                stamp_duty_paid_by:
+                  type: string
+                document_category:
+                  type: string
+                stamp_amount:
+                  type: string
+                stamp_state:
+                  type: string
+                stamp_type:
+                  type: string
+                consideration_amount:
+                  type: number
+                duty_payer_phone_number:
+                  type: string
+                content:
+                  type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
