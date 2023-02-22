@@ -1,5 +1,5 @@
-let postManCollection=require("./signdesk.postman_collection.json")
-let header=postManCollection.item[0].item[0].request.header
+// let postManCollection=require("./signdesk.postman_collection.json")
+// let header=postManCollection.item[0].item[0].request.header
 
 
 function generateHeader(header){

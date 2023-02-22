@@ -1,44 +1,38 @@
 openapi: 3.0.0
 info:
-  title: Signdesk Copy
+  title: CKYC Proxy
   description: please add your description
   version: 1.0.0
 
 servers:
-  - url: https://{{hostname}}
+  - url: https://{{localhost}}
 
 paths:
-  /docverification/api/sandbox/signRequest:
+  /ckyc/imageintegration:
     post:
+      summary: Trackwizz_image
       parameters:
-             - in: header
-               name: Content-Type
-               required: true
-               schema:
-                 type: string
-               example:
-                 application/json
              - in: header
                name: channelID
                required: true
                schema:
                  type: string
                example:
-                 Sodel
+                  Sodel
              - in: header
                name: serviceName
                required: true
                schema:
                  type: string
                example:
-                 sandbox
+                  PNGAUTHENTICATION
              - in: header
                name: uniqueRefNo
                required: true
                schema:
                  type: string
                example:
-                 {{$guid}}
+                  {{$guid}}
              - in: header
                name: timestamp
                required: true
@@ -53,82 +47,41 @@ paths:
             schema:
               type: object
               properties:
-                widget_configuration:
-                  type: string
-                signers_info:
-                  type: array
-                  items :
-                   type : object
-                   properties:
-                     trigger_esign_request:
-                       type: boolean
-                     signer_validation_inputs:
-                       type: string
-                     signer_remarks:
-                       type: string
-                     signer_ref_id:
-                       type: string
-                     signer_position:
-                       type: object
-                       properties:
-                         appearance:
-                           type: array
-                           items :
-                            type : object
-                            properties:
-                              y2:
-                                type: number
-                              y1:
-                                type: number
-                              x2:
-                                type: number
-                              x1:
-                                type: number
-                     signer_name:
-                       type: string
-                     signer_mobile:
-                       type: string
-                     signer_email:
-                       type: string
-                     signature_type:
-                       type: string
-                     sequence:
-                       type: string
-                     page_number:
-                       type: string
-                     esign_type:
-                       type: string
-                     document_to_be_signed:
-                       type: string
-                     authentication_mode:
-                       type: string
-                     access_type:
-                       type: string
-                remarks:
-                  type: string
-                reference_id:
-                  type: string
-                final_copy_recipients:
-                  type: string
-                enable_email_notification:
-                  type: string
-                documents:
-                  type: array
-                  items :
-                   type : object
-                   properties:
-                     signature_sequence:
-                       type: string
-                     reference_doc_id:
-                       type: string
-                     custom:
-                       type: string
-                     content_type:
-                       type: string
-                     content:
-                       type: string
-                docket_title:
-                  type: string
+                A37ImageIntegrationRequest:
+                  type: object
+                  properties:
+                    RequestId:
+                      type: string
+                    RequestDataDetail:
+                      type: object
+                      properties:
+                        CustomerRequestDetails:
+                          type: object
+                          properties:
+                            CustomerRequestDetail:
+                              type: object
+                              properties:
+                                TransactionId:
+                                  type: string
+                                SourceSystemName:
+                                  type: string
+                                SourceSystemCustomerCode:
+                                  type: string
+                                AppRefNumberOfImages:
+                                  type: string
+                                HolderForImages:
+                                  type: string
+                                ImageRequestDetails:
+                                  type: object
+                                  properties:
+                                    ImageTransactionId:
+                                      type: string
+                                    AttachmentCode:
+                                      type: string
+                                    AttachmentBlob:
+                                      type: string
+                                    ImageExtension:
+                                      type: string
       responses:
         '200':
           description: Success
@@ -136,8 +89,9 @@ paths:
             application/json:
               schema:
                 type: object
-  /docverification/api/estamp/geteStampPaper:
+  /ckyc/createupdatecustomer:
     post:
+      summary: Trackwizz_create
       parameters:
              - in: header
                name: channelID
@@ -145,21 +99,21 @@ paths:
                schema:
                  type: string
                example:
-                 Sodel
+                  Sodel
              - in: header
                name: serviceName
                required: true
                schema:
                  type: string
                example:
-                 LIMITBLOCKING
+                  PNGAUTHENTICATION
              - in: header
                name: uniqueRefNo
                required: true
                schema:
                  type: string
                example:
-                 {{$guid}}
+                  {{$guid}}
              - in: header
                name: timestamp
                required: true
@@ -174,10 +128,517 @@ paths:
             schema:
               type: object
               properties:
-                reference_id:
-                  type: string
-                transaction_id:
-                  type: string
+                CustomerRelatedPartyCreateUpdateRequest:
+                  type: object
+                  properties:
+                    ParentCompany:
+                      type: string
+                    RecordRequestDetails:
+                      type: object
+                      properties:
+                        RecordRequestDetail:
+                          type: object
+                          properties:
+                            TransactionId:
+                              type: string
+                            SourceSystemName:
+                              type: string
+                            SourceSystemCustomerCode:
+                              type: string
+                            IsSmallCustomer:
+                              type: number
+                            EkycOTPBased:
+                              type: number
+                            SourceSystemCustomerCreationDate:
+                              type: string
+                            RecordIdentifier:
+                              type: number
+                            Segments:
+                              type: object
+                              properties:
+                                SegmentDetail:
+                                  type: array
+                                  items :
+                                   type : object
+                                   properties:
+                                     Segment:
+                                       type: number
+                                     StartDate:
+                                       type: string
+                                     EndDate:
+                                       type: string
+                            ProductSegments:
+                              type: object
+                              properties:
+                                ProductSegmentDetail:
+                                  type: object
+                                  properties:
+                                    ProductSegment:
+                                      type: string
+                                    StartDate:
+                                      type: string
+                                    EndDate:
+                                      type: string
+                                    Quantity:
+                                      type: number
+                            CustomerStatus:
+                              type: object
+                              properties:
+                                StatusDetail:
+                                  type: object
+                                  properties:
+                                    Status:
+                                      type: string
+                                    EffectiveDate:
+                                      type: string
+                            CustomerType:
+                              type: number
+                            CustomerSubType:
+                              type: number
+                            Prefix:
+                              type: string
+                            FirstName:
+                              type: string
+                            MiddleName:
+                              type: string
+                            LastName:
+                              type: string
+                            MaidenPrefix:
+                              type: string
+                            MaidenFirstName:
+                              type: string
+                            MaidenMiddleName:
+                              type: string
+                            MaidenLastName:
+                              type: string
+                            FatherPrefix:
+                              type: string
+                            FatherFirstName:
+                              type: string
+                            FatherMiddleName:
+                              type: string
+                            FatherLastName:
+                              type: string
+                            SpousePrefix:
+                              type: string
+                            SpouseFirstName:
+                              type: string
+                            SpouseMiddleName:
+                              type: string
+                            SpouseLastName:
+                              type: string
+                            MotherPrefix:
+                              type: string
+                            MotherFirstName:
+                              type: string
+                            MotherMiddleName:
+                              type: string
+                            MotherLastName:
+                              type: string
+                            Gender:
+                              type: string
+                            FormSixty:
+                              type: number
+                            KYCAttestationType:
+                              type: number
+                            MaritalStatus:
+                              type: string
+                            EducationalQualificationDetails:
+                              type: object
+                              properties:
+                                EducationalQualificationDetail:
+                                  type: array
+                                  items :
+                                   type : object
+                                   properties:
+                                     EducationalQualification:
+                                       type: string
+                            Citizenship:
+                              type: object
+                              properties:
+                                CountryDetail:
+                                  type: object
+                                  properties:
+                                    Country:
+                                      type: string
+                            CountryOfResidence:
+                              type: string
+                            OccupationType:
+                              type: number
+                            ActivitySectorDetails:
+                              type: object
+                              properties:
+                                ActivitySectorDetail:
+                                  type: object
+                                  properties:
+                                    ActivitySector:
+                                      type: string
+                            NatureOfBusiness:
+                              type: object
+                              properties:
+                                NatureOfBusinessDetail:
+                                  type: object
+                                  properties:
+                                    Business:
+                                      type: string
+                            NatureOfBusinessOther:
+                              type: string
+                            DateofBirth:
+                              type: string
+                            EmailDetails:
+                              type: object
+                              properties:
+                                EmailDetail:
+                                  type: array
+                                  items :
+                                   type : object
+                                   properties:
+                                     EmailType:
+                                       type: string
+                                     EmailId:
+                                       type: string
+                                     Disabled:
+                                       type: number
+                            KYCDateOfDeclaration:
+                              type: string
+                            KYCPlaceOfDeclaration:
+                              type: string
+                            KYCVerificationDate:
+                              type: string
+                            KYCEmployeeName:
+                              type: string
+                            KYCEmployeeDesignation:
+                              type: string
+                            KYCVerificationBranch:
+                              type: string
+                            KYCEmployeeCode:
+                              type: number
+                            AddressDetails:
+                              type: object
+                              properties:
+                                AddressDetail:
+                                  type: array
+                                  items :
+                                   type : object
+                                   properties:
+                                     PermanentCKYCAddressType:
+                                       type: number
+                                     AddressType:
+                                       type: string
+                                     PlotnoSurveynoHouseFlatno:
+                                       type: number
+                                     AddressLine1:
+                                       type: string
+                                     AddressLine2:
+                                       type: string
+                                     AddressLine3:
+                                       type: string
+                                     PinCode:
+                                       type: number
+                                     City:
+                                       type: string
+                                     State:
+                                       type: string
+                                     Country:
+                                       type: string
+                                     District:
+                                       type: string
+                                     StartDate:
+                                       type: string
+                                     EndDate:
+                                       type: string
+                            PermanentAddressProof:
+                              type: string
+                            CorrespondenceAddressProof:
+                              type: string
+                            CommencementDate:
+                              type: string
+                            PermanentAddressProofOthersValue:
+                              type: string
+                            RelatedPersonCountForCKYC:
+                              type: number
+                            CountryOfBirth:
+                              type: string
+                            BirthCity:
+                              type: string
+                            TaxIdentificationDetails:
+                              type: object
+                              properties:
+                                TaxIdentificationDetail:
+                                  type: object
+                                  properties:
+                                    TaxIdentificationNumber:
+                                      type: string
+                                    Country:
+                                      type: string
+                                    StartDate:
+                                      type: string
+                            ContactDetails:
+                              type: object
+                              properties:
+                                ContactDetail:
+                                  type: object
+                                  properties:
+                                    ContactType:
+                                      type: string
+                                    ISDCode:
+                                      type: number
+                                    ContactNumber:
+                                      type: number
+                                    Disabled:
+                                      type: number
+                            IdentificationDetails:
+                              type: object
+                              properties:
+                                IdentificationDetail:
+                                  type: array
+                                  items :
+                                   type : object
+                                   properties:
+                                     IdType:
+                                       type: string
+                                     IdNumber:
+                                       type: string
+                                     ExpiryDate:
+                                       type: string
+                                     IssueCountry:
+                                       type: string
+                            ProofOfIDSubmitted:
+                              type: string
+                            Minor:
+                              type: number
+                            ApplicationRefNumber:
+                              type: number
+                            HolderforImages:
+                              type: number
+                            IntermediaryCode:
+                              type: number
+                            Listed:
+                              type: number
+                            Industry:
+                              type: string
+                            Nationality:
+                              type: object
+                              properties:
+                                CountryDetail:
+                                  type: array
+                                  items :
+                                   type : object
+                                   properties:
+                                     Country:
+                                       type: string
+                            CountryofOperation:
+                              type: object
+                              properties:
+                                CountryDetail:
+                                  type: array
+                                  items :
+                                   type : object
+                                   properties:
+                                     Country:
+                                       type: string
+                            RegulatoryAMLRisk:
+                              type: string
+                            LastRiskReviewDate:
+                              type: string
+                            NextRiskReviewDate:
+                              type: string
+                            IncomeDetails:
+                              type: object
+                              properties:
+                                IncomeDetail:
+                                  type: object
+                                  properties:
+                                    Range:
+                                      type: string
+                                    ExactIncome:
+                                      type: number
+                                    Currency:
+                                      type: string
+                                    EffectiveDate:
+                                      type: string
+                                    Description:
+                                      type: string
+                                    Proof:
+                                      type: object
+                                      properties:
+                                        IncomeProofDetail:
+                                          type: array
+                                          items :
+                                           type : object
+                                           properties:
+                                             IncomeProof:
+                                               type: string
+                            NetWorthDetails:
+                              type: object
+                              properties:
+                                NetworthDetail:
+                                  type: object
+                                  properties:
+                                    ExactNetworth:
+                                      type: number
+                                    Currency:
+                                      type: string
+                                    EffectiveDate:
+                                      type: string
+                                    Description:
+                                      type: string
+                                    Proof:
+                                      type: object
+                                      properties:
+                                        NetworthProofDetail:
+                                          type: array
+                                          items :
+                                           type : object
+                                           properties:
+                                             NetworthProof:
+                                               type: string
+                            PEP:
+                              type: string
+                            PEPClassification:
+                              type: object
+                              properties:
+                                PEPClassificationDetail:
+                                  type: object
+                                  properties:
+                                    Classification:
+                                      type: string
+                            AdverseMedia:
+                              type: number
+                            AdverseMediaClassification:
+                              type: object
+                              properties:
+                                AdverseMediaClassificationDetail:
+                                  type: object
+                                  properties:
+                                    Classification:
+                                      type: number
+                            AdverseMediaDetails:
+                              type: string
+                            InsiderInformation:
+                              type: string
+                            Tags:
+                              type: object
+                              properties:
+                                TagDetail:
+                                  type: object
+                                  properties:
+                                    Tag:
+                                      type: string
+                            FamilyCode:
+                              type: string
+                            Channel:
+                              type: string
+                            Links:
+                              type: string
+                            ReputationClassification:
+                              type: object
+                              properties:
+                                ReputationClassificationDetail:
+                                  type: object
+                                  properties:
+                                    Classification:
+                                      type: string
+                            RelationDetails:
+                              type: object
+                              properties:
+                                RelationDetail:
+                                  type: object
+                                  properties:
+                                    RecordIdentifier:
+                                      type: string
+                                    SourceSystemName:
+                                      type: string
+                                    SourceSystemCustomerCode:
+                                      type: number
+                                    Relation:
+                                      type: number
+                                    ShareHoldingPercentage:
+                                      type: string
+                                    RelationStartDate:
+                                      type: string
+                            IUPartyType:
+                              type: string
+                            PropertyOwnerFlag:
+                              type: number
+                            ContactPersonDetails:
+                              type: object
+                              properties:
+                                ContactPersonDetail:
+                                  type: object
+                                  properties:
+                                    FirstName:
+                                      type: string
+                                    MiddleName:
+                                      type: string
+                                    LastName:
+                                      type: string
+                                    MobileISD:
+                                      type: number
+                                    MobileNo:
+                                      type: number
+                                    MobileISD2:
+                                      type: number
+                                    MobileNo2:
+                                      type: number
+                                    Designation:
+                                      type: string
+                                    EmailId:
+                                      type: string
+                                    EmailId2:
+                                      type: string
+                            RMDetails:
+                              type: object
+                              properties:
+                                RMDetail:
+                                  type: object
+                                  properties:
+                                    UserCode:
+                                      type: string
+                                    Type:
+                                      type: string
+                                    FromDate:
+                                      type: string
+                                    EndDate:
+                                      type: string
+                            ModuleApplicable:
+                              type: object
+                              properties:
+                                ModuleDetail:
+                                  type: object
+                                  properties:
+                                    Module:
+                                      type: string
+                            ActivityEmployerDetails:
+                              type: object
+                              properties:
+                                ActivityEmployerDetail:
+                                  type: object
+                                  properties:
+                                    DesignationOthers:
+                                      type: string
+                                    EmployerName:
+                                      type: string
+                                    EmployerAddress:
+                                      type: string
+                                    EmployerListed:
+                                      type: number
+                                    EmployerOrganisationType:
+                                      type: number
+                                    CurrentEmploymentInYears:
+                                      type: number
+                            RegAMLSpecialCategoryDetails:
+                              type: object
+                              properties:
+                                RegAMLSpecialCategoryDetail:
+                                  type: object
+                                  properties:
+                                    RegAMLSpecialCategory:
+                                      type: string
+                                    StartDate:
+                                      type: string
+                                    EndDate:
+                                      type: string
       responses:
         '200':
           description: Success
@@ -185,8 +646,9 @@ paths:
             application/json:
               schema:
                 type: object
-  /docverification/api/estamp/requestStampPaper:
+  /ckyc/searchdocument:
     post:
+      summary: Search_CKYC Copy
       parameters:
              - in: header
                name: channelID
@@ -194,21 +656,21 @@ paths:
                schema:
                  type: string
                example:
-                 Sodel
+                  Sodel
              - in: header
                name: serviceName
                required: true
                schema:
                  type: string
                example:
-                 LIMITBLOCKING
+                  SEARCHDOUCUMENT
              - in: header
                name: uniqueRefNo
                required: true
                schema:
                  type: string
                example:
-                 {{$guid}}
+                  {{$guid}}
              - in: header
                name: timestamp
                required: true
@@ -223,48 +685,37 @@ paths:
             schema:
               type: object
               properties:
-                base64String:
+                IncludeImages:
                   type: string
-                first_party_name:
-                  type: string
-                second_party_name:
-                  type: string
-                duty_payer_phone_number:
-                  type: string
-                custom:
+                A50SearchInCkycRequest:
                   type: object
                   properties:
-                    parameter_name:
-                      type: string
-                first_party_address:
-                  type: object
-                  properties:
-                    street_address:
-                      type: string
-                    locality:
-                      type: string
-                    city:
-                      type: string
-                    state:
-                      type: string
-                    pincode:
-                      type: string
-                    country:
-                      type: string
-                stamp_amount:
-                  type: string
-                consideration_amount:
-                  type: string
-                stamp_state:
-                  type: string
-                stamp_type:
-                  type: string
-                stamp_duty_paid_by:
-                  type: string
-                document_category:
-                  type: string
-                document_reference_no:
-                  type: string
+                    RequestId:
+                      type: number
+                    SearchInCkycRequestDetails:
+                      type: object
+                      properties:
+                        CkycSearchRequestDetail:
+                          type: object
+                          properties:
+                            TransactionId:
+                              type: number
+                            ApplicationFormNo:
+                              type: string
+                            BranchCode:
+                              type: string
+                            InputIdType:
+                              type: string
+                            InputIdNo:
+                              type: string
+                            APITags:
+                              type: string
+                            SourceSystem:
+                              type: string
+                            SourceSystemSegment:
+                              type: string
+                            Remarks:
+                              type: string
       responses:
         '200':
           description: Success
@@ -272,8 +723,9 @@ paths:
             application/json:
               schema:
                 type: object
-  /docverification/api/sandbox/getSignatureStatus:
+  /ckyc/downloaddocument:
     post:
+      summary: Download_CKYC
       parameters:
              - in: header
                name: channelID
@@ -281,21 +733,21 @@ paths:
                schema:
                  type: string
                example:
-                 Sodel
+                  Sodel
              - in: header
                name: serviceName
                required: true
                schema:
                  type: string
                example:
-                 GETSIGNSTATUS
+                  PNGAUTHENTICATION
              - in: header
                name: uniqueRefNo
                required: true
                schema:
                  type: string
                example:
-                 {{$guid}}
+                  {{$guid}}
              - in: header
                name: timestamp
                required: true
@@ -310,152 +762,39 @@ paths:
             schema:
               type: object
               properties:
-                document_id:
+                IncludeCKYCRelatedPersonDetails:
                   type: string
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-  /docverification/api/estamp/getEsignAndEstampRequest:
-    post:
-      parameters:
-             - in: header
-               name: channelID
-               required: true
-               schema:
-                 type: string
-               example:
-                 Sodel
-             - in: header
-               name: serviceName
-               required: true
-               schema:
-                 type: string
-               example:
-                 GETSIGNSTATUS
-             - in: header
-               name: uniqueRefNo
-               required: true
-               schema:
-                 type: string
-               example:
-                 {{$guid}}
-             - in: header
-               name: timestamp
-               required: true
-               schema:
-                 type: string
-               example:
-                 {{$isoTimestamp}}
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                reference_id:
+                IncludeImages:
                   type: string
-                source_type:
-                  type: string
-                self_signer:
-                  type: string
-                document_info:
+                A51DownloadFromCkycRequest:
                   type: object
                   properties:
-                    docket_title:
+                    RequestId:
                       type: string
-                    docket_description:
-                      type: string
-                    signature_sequence:
-                      type: string
-                    signature_type:
-                      type: string
-                signer_info:
-                  type: array
-                  items :
-                   type : object
-                   properties:
-                     trigger_esign_request:
-                       type: boolean
-                     signer_position:
-                       type: object
-                       properties:
-                         appearance:
-                           type: string
-                         page:
-                           type: string
-                     signer_ref_id:
-                       type: string
-                     signer_name:
-                       type: string
-                     signer_email:
-                       type: string
-                     signer_remarks:
-                       type: string
-                     signer_mobile:
-                       type: string
-                     esign_type:
-                       type: string
-                     signing_mode:
-                       type: string
-                     sequence:
-                       type: string
-                first_party_name:
-                  type: string
-                second_party_name:
-                  type: string
-                first_party_address:
-                  type: object
-                  properties:
-                    street_address:
-                      type: string
-                    locality:
-                      type: string
-                    city:
-                      type: string
-                    state:
-                      type: string
-                    pincode:
-                      type: string
-                    country:
-                      type: string
-                second_party_address:
-                  type: object
-                  properties:
-                    street_address:
-                      type: string
-                    locality:
-                      type: string
-                    city:
-                      type: string
-                    state:
-                      type: string
-                    pincode:
-                      type: string
-                    country:
-                      type: string
-                document_reference_no:
-                  type: string
-                stamp_duty_paid_by:
-                  type: string
-                document_category:
-                  type: string
-                stamp_amount:
-                  type: string
-                stamp_state:
-                  type: string
-                stamp_type:
-                  type: string
-                consideration_amount:
-                  type: number
-                duty_payer_phone_number:
-                  type: string
-                content:
-                  type: string
+                    DownloadFromCkycRequestDetails:
+                      type: object
+                      properties:
+                        CkycDownloadRequestDetail:
+                          type: object
+                          properties:
+                            TransactionId:
+                              type: string
+                            RecordIdentifier:
+                              type: string
+                            ApplicationFormNo:
+                              type: string
+                            BranchCode:
+                              type: number
+                            CKYCNumber:
+                              type: string
+                            DOB:
+                              type: string
+                            MobileNumber:
+                              type: string
+                            Pincode:
+                              type: string
+                            BirthYear:
+                              type: string
       responses:
         '200':
           description: Success

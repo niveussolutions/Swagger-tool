@@ -12,9 +12,10 @@ servers:
 paths:`;
 }
 
-function pathTemplate({path,method}){
+function pathTemplate({path,method,name}){
   return`  ${path}:
-    ${method}:`
+    ${method}:
+      summary: ${name}`
 }
 
 module.exports={template,pathTemplate}

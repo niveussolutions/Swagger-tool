@@ -1,86 +1,18 @@
-
-ActualAmountCollected:
-  type: string
-AdditionalCommentsOrRemarks:
-  type: string
-Address:
-  type: string
-Ageing:
-  type: string
-Agent:
-  type: string
-AmountDue:
-  type: string
-AmountOnCheque:
-  type: string
-AmounttobeCollected:
-  type: string
-Bank:
-  type: string
-BankNameOnCheque:
-  type: string
-Branch:
-  type: string
-CaseID:
-  type: string
-CashAmountCollected:
-  type: string
-CashCollectionCharges:
-  type: string
-ChequeImage:
-  type: string
-ChequeNo:
-  type: string
-CollectionReceiptDate:
-  type: string
-DateOnCheque:
-  type: string
-DmsDocument:
-  type: array
-  items :
-   type : object
-   properties:                                   
-     DMSDocumentID:
-       type: string
-     DMSDocumentName:
-       type: string
-     DMSDocumentType:
-       type: string
-     DMSVolumeID:
-       type: string
-     Remarks:
-       type: string
-     latitude:
-       type: string
-     longitude:
-       type: string
-LAN_No:
-  type: string
-LeaveComment:
-  type: string
-MobileNumber:
-  type: string
-ModeOfPayment:
-  type: string
-Name:
-  type: string
-OtherCharges:
-  type: string
-PIS:
-  type: string
-PTPDate:
-  type: string
-PaymentMode:
-  type: string
-PaymentRef:
-  type: string
-ReasonForNonPayment:
-  type: string
-ReceiptNo:
-  type: string
-Remarks:
-  type: string
-Status:
-  type: string
-TransactionRef:
-  type: string
+{
+    "response": {
+        "RequestId": "A128y34790ui7",
+        "RequestStatus": "AcceptedbyTW",
+        "ResponseData": {
+            "CustomerResponseDetails": {
+                "CustomerResponseDetail": {
+                    "CustomerTransactionId": "A12349",
+                    "CustomerStatus": "AcceptedbyTW",
+                    "ImageResponseDetails": {}
+                }
+            }
+        }
+    },
+    "error": "ER000",
+    "message": "SUCCESS",
+    "serviceName": "PNGAUTHENTICATION"
+}

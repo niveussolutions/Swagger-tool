@@ -21,7 +21,7 @@ function objectInsideArray(object,spaces){
     let output
   return  output=`object\n${space(spaces+1)}properties:\n${space(spaces+3)}${createDocBody(object,spaces+3).trim()}`
 }
-function createFinalBody(input){
+function createFinalRequestBody(input){
     let body=`      requestBody:
         required: true
         content:
@@ -31,6 +31,6 @@ function createFinalBody(input){
               properties:\n                `+createDocBody(input,16).trim()
               return body
 }
-module.exports={createFinalBody};
+module.exports={createFinalRequestBody};
 
 
