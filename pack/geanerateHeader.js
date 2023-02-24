@@ -2,11 +2,13 @@
 // let header=postManCollection.item[0].item[0].request.header
 
 
-function generateHeader(header){
-  function template({key,type,value}){
+function generateHeader(input){
+  let header=input.header
+  let query=input.url.query
+  function template({key,name,value}){
     let template=
     
-`             - in: header
+`             - in: ${name}
                name: ${key}
                required: true
                schema:
@@ -16,10 +18,17 @@ function generateHeader(header){
     return template
 }
 let output=""
+if(header.length)
 header.forEach((val)=>{
+  val.name="header"
     if(!val.disabled)
     output+=`\n${template(val)}`
 })
-return "\n"+`      parameters:`+output;
+if(query&&query.length)
+query.forEach((val)=>{
+  val.name="query"
+  output+=`\n${template(val)}`
+})
+return output? "\n"+`      parameters:`+output:output;
 }
 module.exports={generateHeader}

@@ -1,16 +1,13 @@
-let postManCollection=require("./postmanCollection/CKYC Proxy.postman_collection.json");
-let data=postManCollection.item[0].item
-if(!postManCollection.item[0].item)
-    data=postManCollection.item
+let fs=require("fs")
+let generateCollection=require("./pack/index").generateCollection
+let path=process.argv
+// console.log(path[3]);
+fs.readFile(path[2],(error,data)=>{
+  //  console.log(data);
+   try{
 
-let template=require("./template")
-let genPath=require("./genAllRequest").genAllPath
-// let header=postManCollection.item[0].item[0].request.header
-let title=postManCollection.info.name;
-let url=data[0].request.url.raw;
-url=url.split("/")
-url=url[0]+"//"+url[2]
-let fs = require('fs');
-fs.writeFile('output.yaml', template.template({title,url})+genPath(data), () => {
-    console.log("done");
-});
+     generateCollection(JSON.parse(data))
+   }catch(e){
+    console.log("Collection is not correct");
+   }
+})
