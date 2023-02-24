@@ -1,14 +1,25 @@
 {
-  "name": "node-js",
+  "name": "post-to-swag",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Run command:- node app.js 'Your collection path' ",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Karthik V Rao",
   "license": "ISC",
-  "dependencies": {
-    "readline": "^1.3.0"
-  }
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kvrao33/Swagger-tool.git"
+  },
+  "keywords": [
+    "postman",
+    "to",
+    "swagger"
+  ],
+  "bugs": {
+    "url": "https://github.com/kvrao33/Swagger-tool/issues"
+  },
+  "homepage": "https://github.com/kvrao33/Swagger-tool#readme"
 }
