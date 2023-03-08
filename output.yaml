@@ -1,84 +1,17 @@
 openapi: 3.0.0
 info:
-  title: MindTickle DataDog Integrated API
+  title: mmfsl-dfb-apigee-proxies Copy 2
   description: please add your description
   version: 1.0.0
 
 servers:
-  - url: https://130.211.38.178.nip.io
+  - url: https://{{hostname}}
 
 paths:
-  /avgTotalResponseTime:
-    get:
-      summary: AvgTotalResponse
-      parameters:
-             - in: header
-               name: Accept
-               required: true
-               schema:
-                 type: string
-               example:
-                 application/json
-      responses:
-        "200":
-          description: it is an example response
-          content:
-            JSON/application:
-              schema:
-                type: object
-              example:
-                {}
-  /policyErrorMetrics:
-    get:
-      summary: policyErrorMetrics
-      parameters:
-             - in: header
-               name: Accept
-               required: true
-               schema:
-                 type: string
-               example:
-                 application/json
-      responses:
-        "200":
-          description: it is an example response
-          content:
-            JSON/application:
-              schema:
-                type: object
-              example:
-                {}
-  /mainmetricsdatadog:
-    get:
-      summary: MainDataDog
-      parameters:
-             - in: header
-               name: Accept
-               required: true
-               schema:
-                 type: string
-               example:
-                 application/json
-      responses:
-        "200":
-          description: it is an example response
-          content:
-            JSON/application:
-              schema:
-                type: object
-              example:
-                {}
-  /api/v2/series:
+  /bre/MOBILE:
     post:
-      summary: DatadogsSubmitMetricsAPI
+      summary: MOBILE
       parameters:
-             - in: header
-               name: Accept
-               required: true
-               schema:
-                 type: string
-               example:
-                 application/json
              - in: header
                name: Content-Type
                required: true
@@ -87,19 +20,33 @@ paths:
                example:
                  application/json
              - in: header
-               name: Content-Encoding
+               name: channelID
                required: true
                schema:
                  type: string
                example:
-                 string
+                 Sodel
              - in: header
-               name: DD-API-KEY
+               name: serviceName
                required: true
                schema:
                  type: string
                example:
-                 70405486803549b0a74e29b16c74611b
+                 MOBILE
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                 12341234
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
       requestBody:
         required: true
         content:
@@ -107,53 +54,77 @@ paths:
             schema:
               type: object
               properties:
-                series:
-                  type: array
-                  items :
-                   type : object
-                   properties:
-                     metric:
-                       type: string
-                     type:
-                       type: number
-                     resources:
-                       type: array
-                       items :
-                        type : object
-                        properties:
-                          name:
-                            type: string
-                          type:
-                            type: string
-                     points:
-                       type: array
-                       items :
-                        type : object
-                        properties:
-                          timestamp:
-                            type: number
-                          value:
-                            type: number
+                MOBILE:
+                  type: string
+                DPD:
+                  type: number
             example: {
-        "series": [
-            {
-                "metric": "apigee_avg(total_response_time)",
-                "type": 2,
-                "resources": [
-                    {
-                        "name": "shipMetrics",
-                        "type": "apigee_proxy"
-                    }
-                ],
-                "points": [
-                    {
-                        "timestamp": 1676450640,
-                        "value": 1425.3333333333335
-                    }
-                ]
-            }
-        ]
-}
+                          "MOBILE": "6417910989",
+                          "DPD": 1
+                      }
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /bre/PAN:
+    post:
+      summary: PAN
+      parameters:
+             - in: header
+               name: Content-Type
+               required: true
+               schema:
+                 type: string
+               example:
+                 application/json
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                 Sodel
+             - in: header
+               name: serviceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 PAN
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                 12341234
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                PAN:
+                  type: string
+                DPD:
+                  type: number
+            example: {
+                          "PAN": "CNDPM3853K",
+                          "DPD": 23
+                      }
       responses:
         "200":
           description: it is an example response
