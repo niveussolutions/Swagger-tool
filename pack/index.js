@@ -14,7 +14,9 @@ function generateCollection(postManCollection){
     url=url.split("/")
     url=url[0]+"//"+url[2]
     fs.writeFile('output.yaml', template.template({title,url})+genPath(data), () => {
-        console.log("done");
+        console.log("\n\n*******     done       *********\n");
+        console.log("If response is not in your postman collection an example response will be added automatically\n");
+        console.log("**********************----------------****************-------------------************************\n\n");
     });
 }
 module.exports={generateCollection};
