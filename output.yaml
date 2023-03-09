@@ -59,9 +59,12 @@ paths:
                 DPD:
                   type: number
             example: {
-                          "MOBILE": "6417910989",
-                          "DPD": 1
-                      }
+
+    "MOBILE": "6417910989",
+
+    "DPD": 1
+
+}
       responses:
         "200":
           description: it is an example response
@@ -122,9 +125,12 @@ paths:
                 DPD:
                   type: number
             example: {
-                          "PAN": "CNDPM3853K",
-                          "DPD": 23
-                      }
+
+    "PAN": "CNDPM3853K",
+
+    "DPD": 23
+
+}
       responses:
         "200":
           description: it is an example response
