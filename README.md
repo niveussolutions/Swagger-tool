@@ -1,4 +1,4 @@
-> **_NOTE:_**  This is a Node js Tool please check that ypu have installed Node J 
+> **_NOTE:_**  This is a Node js Tool please check that you have installed Node JS
 <!-- GETTING STARTED -->
 ## Getting Started
 
@@ -32,9 +32,15 @@ _Below is an example of how to install the tool in your
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/kvrao33/Swagger-tool.git
+   git clone https://github.com/niveussolutions/Swagger-tool.git
    ```
-
+2. Open the terminal inside downloaded Swagger-tool project file
+   Run the project
+   ```sh
+   node app.js "home/download/your_postman_collection.json"
+   ```
+3. If your collection/Collection path is correct it will generate the swagger doc structure inside the output.yaml file 
+**_NOTE:_**  output.yaml file is inside your project folder and confirm the structure using swagger once 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
@@ -50,12 +56,16 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Add Response
-- [x] Add Header
-- [x] Add Query params
-- [x] Add Request Body
-   - [ ] XML
-   - [ ] Text
+- [x] Response
+- [x] Header
+- [x] Query params
+- [x] Request Body
+   - [X] raw
+      - [x] JSON
+      - [ ] XML
+   - [ ] form-data
+   - [ ] x-www-form-urlencoded
+
 
     
    

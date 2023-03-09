@@ -1,7 +1,4 @@
 let fs = require('fs');
-let postManCollection=require("../postmanCollection/CKYC Proxy.postman_collection.json");
-
-
 
 function generateCollection(postManCollection){
     
