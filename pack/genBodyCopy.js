@@ -22,20 +22,7 @@ let createDocBody=(input,spaces)=>{
     return output
 }
 
-let data
-fs.readFile('/home/user/Node JS/input.txt', 'utf8', (err, input) => {
-    let body=`      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:\n                `+createDocBody(input,16).trim()
-              console.log(body);
-    fs.writeFile('output.txt', createDocBody(input,0), () => {
-    console.log("done");
-});
-});
+
 
 function objectInsideArray(object,spaces){
     let output

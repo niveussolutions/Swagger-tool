@@ -1,11 +1,11 @@
 let template=require("./template");
-let genBody=require("./requestBodyGeanerate")
+let genBody=require("./rawRequestBodyGeanerate")
 let genHeader=require("./geanerateHeader").generateHeader
 
 function createRequestBody(data){
     let path =data.request.url.path.join("/");
-    let body=data.request.body.raw
-return '\n'+genBody.createFinalRequestBody(body)
+    
+return '\n'+genBody.createFinalRequestBody(data)
 }
 
 function genAllPath(allRequestArray){
@@ -17,8 +17,8 @@ allRequestArray.forEach(element => {
     output+="\n"+template.pathTemplate({path,method,name})
     // Adding Parameter ** Header ** Query **
     output+=genHeader(element.request);
-    if(method!=="get"&&method!=="delete"&&element.request.body&&element.request.body.raw){      // Adding RequestBody 
-      output+=createRequestBody(element)
+    if(method!=="get"&&method!=="delete"&&element.request.body&&element.request.body.raw&&element.request.body.mode==="raw"){      // Adding RequestBody 
+       output+=createRequestBody(element)
       output+=`\n            example: ${element.request.body.raw}`
     }
     output+=`\n      responses:`

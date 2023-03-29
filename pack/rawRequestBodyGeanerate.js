@@ -1,7 +1,12 @@
 let {space,findDataType}=require('./utility')
 let createDocBody=(input,spaces)=>{
     let data;
-        data = JSON.parse(input);
+    try{
+      data = JSON.parse(input);
+    }catch{
+      console.log("Error in json Parse Request body");
+    }
+        
         let output = "";
         for (let a in data) {
             let name = a;
@@ -18,19 +23,31 @@ let createDocBody=(input,spaces)=>{
     return output
 }
 function objectInsideArray(object,spaces){
-    let output
-  return  output=`object\n${space(spaces+1)}properties:\n${space(spaces+3)}${createDocBody(object,spaces+3).trim()}`
+    
+  return  `object\n${space(spaces+1)}properties:\n${space(spaces+3)}${createDocBody(object,spaces+3).trim()}`
 }
 function createFinalRequestBody(input){
+  let content="json/application";
     let body=`      requestBody:
         required: true
         content:
-          application/json:
+          ${content}:
             schema:
               type: object
-              properties:\n                `+createDocBody(input,16).trim()
+              properties:\n                `
+    input=input.request.body.raw
+    body+=createDocBody(input,16).trim();
               return body
 }
+
+// function getContent(input){
+// input=input.request.body.options.raw.language
+// if(input==="text" ||input==="xml"){
+//     return "text/plain"
+// }else if(input==="json"){
+//     return "json/application"
+// }
+// }
 module.exports={createFinalRequestBody};
 
 

@@ -8,7 +8,8 @@ fs.readFile(path[2],(error,data)=>{
 
      generateCollection(JSON.parse(data))
    }catch(e){
-    console.log("\n\n*****************************          ERROR             ******************************************\n");
+    console.log("\n\n*****************************          ERROR             ******************************************\n"+e);
     console.log("Collection is not correct\n\n");
    }
 })
+
