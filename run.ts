@@ -1,9 +1,13 @@
 import * as fs from 'fs';
 import {  getSwaggerData } from './pack/getFullCollection';
+import { verifyOutputPath } from './pack/utility/utility';
 let path=process.argv
 fs.readFile(path[2],(error,data:any)=>{    
      try{
-   data=JSON.parse(data)
+//Checking that path is exist or not 
+if(fs.existsSync(path[2])){
+   
+data=JSON.parse(data)
 
 // ** handling extra Array
    let input:any
@@ -13,20 +17,33 @@ fs.readFile(path[2],(error,data:any)=>{
    }
    else
    input=data.item[0]
+   
+   let yamlFilePath='./output/output.yaml'
+//checking path for output yaml file 
+if(verifyOutputPath(path[3])){
 
+   yamlFilePath=path[3]
+}
 
 
 // ***
+
     
   //writing the file 
-  fs.writeFile('./output/output.yaml', getSwaggerData(data), () => {
+  fs.writeFile(yamlFilePath, getSwaggerData(data), () => {
     console.log("\n\n*******     done       *********\n");
+    console.log(`Output Path ${yamlFilePath}\n\n`);
+    
     // console.log("If response is not in your postman collection an example response will be added automatically\n");
     console.log("**********************----------------****************-------------------************************\n\n");
 });
+}
+else
+console.log("⛔⛔⛔   ERROR   ⛔ ⛔⛔ \nCollection path is not correct\n\n");
+
      }catch(e){
         //Printing the error
-      console.log("\n\n*****************************          ERROR             ******************************************\n"+e);
+      console.log("\n\n************************       ⛔⛔⛔   ERROR   ⛔ ⛔⛔         ********************************\n"+e);
       console.log("Collection is not correct\n\n");
      }
   })
