@@ -1,16 +1,17 @@
-import { Body, FormdataEntity } from "../../interface/interface"
+import { Body,  HeaderEntityOrUrlencodedEntityOrVariableEntity } from "../../interface/interface"
 
-function generateFormData(input:Body){
+function generateUrlEncoded(input:Body){
   let output=""
-    if(input?.formdata?.length){
-      input?.formdata?.forEach((data)=>{
-        if(!data.disabled)
-        output+="\n"+template(data);
-                     })
+  
+    if(input?.urlencoded?.length){
+        input?.urlencoded?.forEach((data)=>{
+            if(!data.disabled)
+            output+="\n"+template(data);
+                         })
         if(output.length>2)
         output="\n"+`      requestBody:
         content:
-          multipart/form-data:
+          application/x-www-form-urlencoded::
             schema:
               type: object
               properties:`+output
@@ -21,7 +22,7 @@ function generateFormData(input:Body){
 return output
 }
 
-function template(input:FormdataEntity){
+function template(input:HeaderEntityOrUrlencodedEntityOrVariableEntity){
     let output=""
     output= `                ${input.key}:
                   type: string`
@@ -30,4 +31,4 @@ function template(input:FormdataEntity){
     }
     return output
 }
-export {generateFormData}
+export {generateUrlEncoded}
