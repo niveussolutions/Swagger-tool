@@ -33,7 +33,12 @@ _Below is an steps to install the tool in your
 3. Open the terminal inside downloaded Swagger-tool project file
    Run the project
    ```sh
-   npx ts-node run.ts "your_postman_collection_path"
+   npm run swagger-converter "your_postman_collection_path/collection.json"
+   ```
+   We can optionally add output file path (  path file extension should be .yaml  ) default is   "./output/output.yaml"   (  Which means inside your project folder  ).
+   Run the project
+   ```sh
+   npm run swagger-converter "your_postman_collection_path/collection.json" "your_output_file_path/collection.yaml"
    ```
 4. If your collection/Collection path is correct it will generate the swagger doc structure inside the out/output.yaml file 
 **_NOTE:_**  output.yaml file is inside your project folder and confirm the structure using swagger once 
