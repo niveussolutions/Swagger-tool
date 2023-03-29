@@ -1,0 +1,19 @@
+{
+  "name": "jhv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "run.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.15.9",
+    "typescript": "^5.0.2"
+  },
+  "dependencies": {
+    "log-symbols": "^5.1.0"
+  }
+}

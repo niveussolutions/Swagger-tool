@@ -1,12 +1,12 @@
-function space(count){
-    let spaces=""
-    for(i=1;i<=count;i++){
+function spaces(count:number):string{
+    let spaces:string=""
+    for(let i:number=1;i<=count;i++){
         spaces+=" " 
     }
     return spaces
      }
-function findDataType(data,spaces){
-        let type
+function findDataTypes(data){
+        let type: string
         if (data === null) {
             type = "string";
         }else if(Array.isArray(data)){
@@ -17,6 +17,6 @@ function findDataType(data,spaces){
         }
         return type
     }
+export {spaces,findDataTypes};
 
-module.exports= {space,findDataType}
 // \n${space(spaces)}items :\n${space(spaces+1)}type :${findDataType(data[0])}
