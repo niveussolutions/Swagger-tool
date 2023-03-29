@@ -2,19 +2,19 @@ import { ResponseEntity } from "../interface/interface"
 
 function generateResponse(responseData:ResponseEntity){
     
-    let a=`\n        "${responseData.code}":
+    let output=`\n        "${responseData.code}":
            description: ${responseData.status}
            content:
-             ${getcContent(responseData)}:
+             ${getContent(responseData)}:
                schema:
                  type: object
                example:
                 ${responseData.body}`
-return a
+return output
 }
-function getcContent(data:any){
+function getContent(data:any){
     let output:any
-    data.header.forEach((val)=>{
+    data.header.forEach((val:any)=>{
     
       if(val.key==="content-type"){
         output= val.value

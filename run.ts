@@ -10,7 +10,6 @@ fs.readFile(path[2],(error,data:any)=>{
    input=data.item[0].item
    if(!input){
       input=data
-      console.log("not"); 
    }
    else
    input=data.item[0]

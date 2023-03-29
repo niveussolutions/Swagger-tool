@@ -4,6 +4,7 @@ import { exampleResponse, swaggerPathTemplate, swaggerTopTemplate } from "./swag
 import { getRawData } from "./RequestBody/Raw Data/rawDataWithCondition";
 import { generateFormData } from "./RequestBody/Form-Data/geanerateFormData";
 import { PostmanCollection } from "./interface/interface";
+import { generateUrlEncoded } from "./RequestBody/Form-urlencoded/geanerateUrlEncoded";
 
 function genAllPath(allRequestArray:any){
     let output="";
@@ -30,12 +31,14 @@ function genAllPath(allRequestArray:any){
           output+=`\n            example: ${element.request.body.raw}`
         }else if(element.request?.body?.formdata){
           output+= generateFormData(element.request?.body);
-          output+=`\n            example: ${element.request.body.raw}`
+        }
+        else if(element.request?.body?.urlencoded){
+          output+= generateUrlEncoded(element.request?.body);
         }
 
         // Adding the Response
         output+=`\n      responses:`
-        if(element.response.length>0){                                                              // Adding Response if ith
+        if(element.response.length){                                                              // Adding Response if ith
           output+=generateResponses(element.response)
         }else{
           output+=exampleResponse()
