@@ -1,0 +1,1 @@
+ts-node-esm run.ts "/home/user/Swagger Tool with TypeScript/interface.postman_collection.json"
