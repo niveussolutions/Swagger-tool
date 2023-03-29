@@ -24,15 +24,16 @@ _Below is an steps to install the tool in your
    ```sh
    git clone https://github.com/niveussolutions/Swagger-tool.git
    ```
-2. Open the terminal inside downloaded Swagger-tool project file
-   Run the project
-   ```sh
-   ts-node-esm run.ts "your_postman_collection_path"
-   ```
-3. Install all the packages like TypeScript  
+
+2. Install all the packages like TypeScript  
    Install Dependency with npm 
    ```sh
    npm install
+   ```
+3. Open the terminal inside downloaded Swagger-tool project file
+   Run the project
+   ```sh
+   ts-node-esm run.ts "your_postman_collection_path"
    ```
 4. If your collection/Collection path is correct it will generate the swagger doc structure inside the out/output.yaml file 
 **_NOTE:_**  output.yaml file is inside your project folder and confirm the structure using swagger once 
