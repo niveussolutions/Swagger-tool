@@ -1,3 +1,2 @@
 # ignore ALL .yaml files
-*.yaml
 node_modules
