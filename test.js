@@ -1,1 +1,0 @@
-console.log(JSON.parse("{\n\"PolicyNumber\":\"3001/5001533/00/000\",\n\"CustomerId\":\"100418713788\",\n\"CorrelationId\":\"{{$guid}}\"\n\n}"));
