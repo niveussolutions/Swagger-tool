@@ -6,8 +6,8 @@ This is a Node js ( TypeScript tool ) to generate swagger yaml file by postman c
 
 ## Prerequisites
 
-it needs Node js and NPM
-  ### Installation guide 
+it needs Nodejs and NPM
+  ### Nodejs and NPM installation guide 
 
   1. For Ubuntu/Linux [Click](https://www.geeksforgeeks.org/installation-of-node-js-on-linux/)
 
