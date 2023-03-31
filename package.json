@@ -6,6 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "swagger-converter": "npx ts-node run.ts",
+
+    "test-xml":"npx ts-node test/test.ts",
     "build": "tsc"
   },
   "author": "",
@@ -15,6 +17,7 @@
     "typescript": "^5.0.2"
   },
   "dependencies": {
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "xml2js": "^0.4.23"
   }
 }
