@@ -1,0 +1,3046 @@
+openapi: 3.0.0
+info:
+  title: mmfsl-dfb-apigee-proxies Copy 3
+  description: please add your description
+  version: 1.0.0
+
+servers:
+  - url: https://{{hostname}}
+
+paths:
+  /lms/customerRest/customerService/getCustomerAgreement:
+    post:
+      summary: Limit Sanction latter
+      parameters:
+             - in: header
+               name: serviceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 getCustomerAgreement
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                  Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                  {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                cif:
+                  type: string
+                agreementType:
+                  type: string
+            example: {
+    "cif": "10003895",
+    "agreementType": "SANCTIONAGREEMENT"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/limitRest/limitService/getLimitSetup:
+    post:
+      summary: getLimitSetup
+      parameters:
+             - in: header
+               name: serviceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 getLimitSetup
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                  Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                  {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                cif:
+                  type: string
+                customerGroup:
+                  type: string
+            example: {
+    "cif": "10005401",
+    "customerGroup": ""
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/customerRest/customerService/updateCustomerPhoneNumber:
+    post:
+      summary: updateCustomerPhoneNumber
+      parameters:
+             - in: header
+               name: serviceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 updateCustomerPhoneNumber
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                  Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                  {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                cif:
+                  type: string
+                phone:
+                  type: object
+                  properties:
+                    phoneAreaCode:
+                      type: string
+                    phoneCountryCode:
+                      type: string
+                    phoneNumber:
+                      type: string
+                    phoneTypeCode:
+                      type: string
+                    priority:
+                      type: string
+            example: {
+    "cif": "10003540",
+    "phone": {
+        "phoneAreaCode": null,
+        "phoneCountryCode": null,
+        "phoneNumber": "8355927279",
+        "phoneTypeCode": "MOBILE",
+        "priority": "5"
+    }
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/customerRest/customerService/updateCustomerAddress:
+    post:
+      summary: updateCustomerAddress
+      parameters:
+             - in: header
+               name: serviceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 updateCustomerAddress
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                  Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                  {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                address:
+                  type: object
+                  properties:
+                    FlatNo:
+                      type: string
+                    Street:
+                      type: string
+                    addrLine1:
+                      type: string
+                    addrType:
+                      type: string
+                    buildingNo:
+                      type: string
+                    city:
+                      type: string
+                    country:
+                      type: string
+                    pinCode:
+                      type: string
+                    poBox:
+                      type: string
+                    priority:
+                      type: string
+                    state:
+                      type: string
+                cif:
+                  type: string
+            example: {
+    "address": {
+        "FlatNo": "102",
+        "Street": "104",
+        "addrLine1": "103",
+        "addrType": "PER",
+        "buildingNo": "101",
+        "city": "THA",
+        "country": "IN",
+        "pinCode": "421306",
+        "poBox": null,
+        "priority": "4",
+        "state": "MH"
+    },
+    "cif": "10003540"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/finInstructionRest/loanInstructionService/partialSettlement:
+    post:
+      summary: Partial Settlement
+      parameters:
+             - in: header
+               name: serviceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 partialSettlement
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                  Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                  {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                finReference:
+                  type: string
+                reCalType:
+                  type: string
+                amount:
+                  type: number
+                paymentMode:
+                  type: string
+                reqType:
+                  type: string
+                extendedDetails:
+                  type: array
+                  items :
+                   type : object
+                   properties:
+                     extendedFields:
+                       type: array
+                       items :
+                        type : object
+                        properties:
+                          fieldName:
+                            type: string
+                receiptDetail:
+                  type: object
+                  properties:
+                    paymentRef:
+                      type: string
+                    transactionRef:
+                      type: string
+                    fundingAcCode:
+                      type: string
+                    receivedDate:
+                      type: string
+                    remarks:
+                      type: string
+                fees:
+                  type: array
+                  items :
+                   type : undefined
+            example: {
+    "finReference": "1000PRS0000027",
+    "reCalType": "ADJMUR",
+    "amount": 50000,
+    "paymentMode": "CASH",
+    "reqType": "Post",
+    "extendedDetails": [
+        {
+            "extendedFields": [
+                {
+                    "fieldName": "WALLETID"
+                },
+                {
+                    "fieldName": "MOBILENUMBER"
+                }
+            ]
+        }
+    ],
+    "receiptDetail": {
+        "paymentRef": "456464",
+        "transactionRef": "234234",
+        "fundingAcCode": "01",
+        "receivedDate": "2019-03-11T00:00:00",
+        "remarks": "Testing from API"
+    },
+    "fees": []
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/finInstructionRest/loanInstructionService/earlySettlement:
+    post:
+      summary: Early Settlement
+      parameters:
+             - in: header
+               name: serviceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 earlySettlement
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                  Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                  {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                finReference:
+                  type: string
+                fromDate:
+                  type: string
+                amount:
+                  type: number
+                paymentMode:
+                  type: string
+                excessAdjustTo:
+                  type: string
+                reqType:
+                  type: string
+                receiptDetail:
+                  type: object
+                  properties:
+                    paymentRef:
+                      type: string
+                    transactionRef:
+                      type: string
+                    fundingAccount:
+                      type: number
+                    receivedDate:
+                      type: string
+                    remarks:
+                      type: string
+                fees:
+                  type: array
+                  items :
+                   type : undefined
+            example: {
+    "finReference": "RUR28335547666",
+    "fromDate": "2019-01-15T00:00:00",
+    "amount": 1000000000,
+    "paymentMode": "NEFT",
+    "excessAdjustTo": "E",
+    "reqType": "Post",
+    "receiptDetail": {
+        "paymentRef": "12345678",
+        "transactionRef": "258963",
+        "fundingAccount": 10,
+        "receivedDate": "2019-01-15T00:00:00",
+        "remarks": "Testing from API"
+    },
+    "fees": []
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/statementRest/statementService/getStatement:
+    post:
+      summary: Statement of account
+      parameters:
+             - in: header
+               name: serviceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 getStatement
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                  Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                  {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                finReference:
+                  type: string
+                fromDate:
+                  type: string
+                toDate:
+                  type: string
+                template:
+                  type: string
+            example: {"finReference":"1000CD00000454",
+"fromDate": "2019-01-01T00:00:00",
+"toDate": "2019-10-18T00:00:00",
+"template": "Format1"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/limitRest/limitService/blockLimit:
+    post:
+      summary: Limit Blocking
+      parameters:
+             - in: header
+               name: serviceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 blockLimit
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                  Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                  {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                cif:
+                  type: string
+                limitId:
+                  type: string
+            example: {
+    "cif": "16",
+    "limitId": "113"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/limitRest/limitService/unBlockLimit:
+    post:
+      summary: Limit unBlocking
+      parameters:
+             - in: header
+               name: serviceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 unBlockLimit
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                  Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                  {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                cif:
+                  type: string
+                limitId:
+                  type: string
+            example: {
+    "cif": "16",
+    "limitId": "113"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/finInstructionRest/loanInstructionService/manualPayment:
+    post:
+      summary: Manual payment
+      parameters:
+             - in: header
+               name: serviceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 manualPayment
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                 FINO
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                  {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                finReference:
+                  type: string
+                amount:
+                  type: string
+                paymentMode:
+                  type: string
+                reqType:
+                  type: string
+                receiptChannel:
+                  type: string
+                valueDate:
+                  type: string
+                receiptDetail:
+                  type: object
+                  properties:
+                    paymentRef:
+                      type: string
+                    transactionRef:
+                      type: string
+                    fundingAccount:
+                      type: string
+                    receivedDate:
+                      type: string
+                    remarks:
+                      type: string
+                    bankCode:
+                      type: string
+                    valueDate:
+                      type: string
+            example: {
+
+    "finReference": "HO00CD00005183",
+
+    "amount": "255",
+
+    "paymentMode": "Cash",
+
+    "reqType": "Post",
+
+    "receiptChannel": "MOB",
+
+    "valueDate": "2022-08-01T00:00:00",
+
+    "receiptDetail": {
+
+        "paymentRef": "20210901020837920",
+
+        "transactionRef": "20210901020837928",
+
+        "fundingAccount": "255",
+
+        "receivedDate": "2022-08-01T00:00:00",
+
+        "remarks": "",
+
+        "bankCode": "",
+
+        "valueDate": "2022-08-01T00:00:00"
+
+    }
+
+}
+      responses:
+        "200":
+           description: OK
+           content:
+             application/json:
+               schema:
+                 type: object
+               example:
+                {
+    "error": "ER000",
+    "message": "Success",
+    "serviceName": "manualPayment",
+    "response": {
+        "returnCode": "0000",
+        "finReference": "HO00CD00005183",
+        "stp": true,
+        "receiptId": 7073
+    }
+}
+  /lms/transactionMappingRest/transactionMappingService/doAuthentication:
+    post:
+      summary: Merchant Auth
+      parameters:
+             - in: header
+               name: serviceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 doAuthentication
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                  Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                  {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                mobileNumber:
+                  type: string
+                posId:
+                  type: string
+                storeId:
+                  type: string
+            example: {
+    "mobileNumber": "9137392319",
+    "posId": "111111",
+    "storeId": "2"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/finInstructionRest/loanInstructionService/reqCashDeposit:
+    post:
+      summary: Cash Deposite
+      parameters:
+             - in: header
+               name: serviceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 reqCashDeposit
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                  Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                  {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                collectionAccountDetailList:
+                  type: array
+                  items :
+                   type : object
+                   properties:
+                     finReference:
+                       type: string
+                     receiptId:
+                       type: string
+                     moduleType:
+                       type: string
+                     partnerBankId:
+                       type: string
+            example: {
+
+    "collectionAccountDetailList": [
+
+        {
+
+            "finReference": "HO00CD00002127",
+
+            "receiptId": "5626",
+
+            "moduleType": "COL2CSHIER",
+
+            "partnerBankId": "541"
+
+        }
+
+    ]
+
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/finInstructionRest/loanInstructionService/reqCashierEntry:
+    post:
+      summary: Cash Handover
+      parameters:
+             - in: header
+               name: serviceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 reqCashierEntry
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                  Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                  {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                collectionAccountDetailList:
+                  type: array
+                  items :
+                   type : object
+                   properties:
+                     finReference:
+                       type: string
+                     receiptId:
+                       type: string
+                     moduleType:
+                       type: string
+            example: {
+    "collectionAccountDetailList": [
+        {
+            "finReference": "SLV0CD00005348",
+            "receiptId": "3855",
+            "moduleType": "COL2CSHIER"
+        }
+    ]
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/finInstructionRest/loanInstructionService/saveCollectionDetais:
+    post:
+      summary: Collection
+      parameters:
+             - in: header
+               name: serviceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 saveCollectionDetais
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                  Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                  {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                finReference:
+                  type: string
+                receiptId:
+                  type: string
+                amount:
+                  type: string
+            example: {
+    "finReference": "SKM0PL00013497",
+    "receiptId": "10074",
+    "amount": "6000"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/limitRest/limitService/getCustomerLimitStructure:
+    post:
+      summary: get Limit Structure
+      parameters:
+             - in: header
+               name: serviceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 getCustomerLimitStructure
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                  Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                  {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                limitcode:
+                  type: string
+            example: {"limitcode":"LSTRUCT"}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/mandateRest/mandateService/getMandates:
+    post:
+      summary: get Mandate
+      parameters:
+             - in: header
+               name: ServiceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 getMandate
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                  Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                  {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/statementRest/statementService/getForeclosureLetter:
+    post:
+      summary: ForeClosure
+      parameters:
+             - in: header
+               name: ServiceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 getForeclosureLetter
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                  Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                  {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                finReference:
+                  type: string
+                days:
+                  type: string
+            example: {"finReference":"HO00CD00004042","days":"1"}
+      responses:
+        "200":
+           description: OK
+           content:
+             application/json:
+               schema:
+                 type: object
+               example:
+                {
+    "error": "ER000",
+    "message": "Success",
+    "serviceName": "getForeclosureLetter",
+    "response": {
+        "returnCode": "0000",
+        "returnText": "Success",
+        "totalForeclosureAmount": 1524,
+        "charges": 524,
+        "principal": 1000,
+        "interest": 0
+    }
+}
+  /lms/customerRest/customerService/getCustomerDetails:
+    post:
+      summary: Get Customer Details
+      parameters:
+             - in: header
+               name: ServiceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 getCustomerDetails
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                  Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                  {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                cif:
+                  type: string
+            example: {"cif":"125"}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/customerRest/customerService/updateCustomerBankingInformation:
+    post:
+      summary: updateCustomerBankingInformation
+      parameters:
+             - in: header
+               name: ServiceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 updateCustomerBankingInformation
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                  Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                  {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                cif:
+                  type: string
+                customerBankInfo:
+                  type: object
+                  properties:
+                    bankId:
+                      type: string
+                    bankName:
+                      type: string
+                    accountNumber:
+                      type: string
+                    accountType:
+                      type: string
+                    ccLimit:
+                      type: number
+            example: {
+    "cif": "10003638",
+    "customerBankInfo": {
+        "bankId": "112",
+        "bankName": "680009402",
+        "accountNumber": "50100231525189",
+        "accountType": "SA",
+        "ccLimit":1000
+    }
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/customerRest/customerService/doCustomerValidation:
+    post:
+      summary: customer Validation
+      parameters:
+             - in: header
+               name: ServiceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 doCustomerValidation
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                  Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                  {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                PHONENUMBER:
+                  type: string
+            example: {"PHONENUMBER":"9137382319"}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/createFinanceRest/finance/getFinance:
+    post:
+      summary: Get Loans(Active lonas)
+      parameters:
+             - in: header
+               name: ServiceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 getFinance
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                  Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                  {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                finReference:
+                  type: string
+            example: {"finReference":"HO00CD00001367"}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/createFinanceRest/finance/getFinanceWithCustomer:
+    post:
+      summary: Get Loans by Customer ID
+      parameters:
+             - in: header
+               name: ServiceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 getFinanceWithCustomer
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                  Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                  {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                cif:
+                  type: string
+            example: {"cif":"125"}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/createFinanceRest/finance/reinitiateLoan:
+    post:
+      summary: Reinstate
+      parameters:
+             - in: header
+               name: ServiceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 reinitiateLoan
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                  Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                  {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                  {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                financeSchedule:
+                  type: object
+                  properties:
+                    hostReference:
+                      type: string
+                    externalReference:
+                      type: string
+                MID:
+                  type: string
+                DATETIME:
+                  type: string
+            example: {
+    "financeSchedule": {
+        "hostReference": "202301311850360003",
+        "externalReference": "202301311850360003"
+    },
+    "MID":"2" ,
+    "DATETIME":"20220617125352"
+   
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/createFinanceRest/finance/cancelLoan:
+    post:
+      summary: cancelloan
+      parameters:
+             - in: header
+               name: ServiceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 cancelLoan
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                  Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                  {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                AdditionalInfo:
+                  type: string
+                mobile:
+                  type: string
+                CardNumber:
+                  type: string
+                CardExpiry:
+                  type: string
+                TxnAmount:
+                  type: string
+                TransactionID:
+                  type: string
+                HostTransactionID:
+                  type: string
+                OriginalTransactionID:
+                  type: string
+                OriginalSaleHostTransactionID:
+                  type: string
+                AccessCode:
+                  type: string
+                Mid:
+                  type: string
+                Tid:
+                  type: string
+                Otp:
+                  type: string
+                DateTime:
+                  type: string
+            example: {
+    "AdditionalInfo": "null",
+    "mobile": "9137382319",
+    "CardNumber": "",
+    "CardExpiry": "2233",
+    "TxnAmount": "2100000",
+    "TransactionID": "202301311850360007",
+    "HostTransactionID": "202301311850360007",
+    "OriginalTransactionID": "202301311850360006",
+    "OriginalSaleHostTransactionID": "202301311850360006",
+    "AccessCode": "",
+    "Mid": "2",
+    "Tid": "00000100",
+    "Otp": "",
+    "DateTime": "20230201121322"
+}
+
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/send_otp:
+    post:
+      summary: CreateLoan-sendOTP
+      parameters:
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                  {{$guid}}
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                 Sodel
+             - in: header
+               name: serviceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 sendOTP
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                CardNumber:
+                  type: string
+                mobile:
+                  type: string
+                TransactionTypeId:
+                  type: string
+                Mid:
+                  type: string
+                CardExpiry:
+                  type: string
+                Name:
+                  type: string
+                ROI:
+                  type: string
+                channelName:
+                  type: string
+                TxnAmount:
+                  type: string
+                Tid:
+                  type: string
+                DateTime:
+                  type: string
+                TransactionID:
+                  type: string
+            example: {
+    "CardNumber": "",
+    "mobile": "9137382319",
+    "TransactionTypeId": "1",
+    "Mid": "",
+    "CardExpiry": "",
+    "Name": "Yogesh",
+    "ROI":"10.20",
+    "channelName": "Pinelabs",
+    "TxnAmount": "2100000",
+    "Tid": "",
+    "DateTime": "20230201185036",
+    "TransactionID": "202301311850360006"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/createFinanceRest/finance/createFinance:
+    post:
+      summary: createloan
+      parameters:
+             - in: header
+               name: ServiceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 createFinance
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                  Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                  {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                AdditionalInfo:
+                  type: string
+                mobile:
+                  type: string
+                CardNumber:
+                  type: string
+                CardExpiry:
+                  type: string
+                TxnAmount:
+                  type: string
+                TransactionID:
+                  type: string
+                HostTransactionID:
+                  type: string
+                Mid:
+                  type: string
+                Tid:
+                  type: string
+                DateTime:
+                  type: string
+                Otp:
+                  type: string
+                AccessCode:
+                  type: string
+                TxnType:
+                  type: string
+                ProductId:
+                  type: string
+                ProductSku:
+                  type: string
+                OemId:
+                  type: string
+                SchemeId:
+                  type: string
+                SchemeDesc:
+                  type: string
+                ImeiNo:
+                  type: string
+                EmiAmount:
+                  type: string
+                Roi:
+                  type: string
+                TenureMonths:
+                  type: string
+                DownPaymentAmt:
+                  type: string
+            example: {
+    "AdditionalInfo": null,
+    "mobile": "9137382319",
+    "CardNumber": "",
+    "CardExpiry": "1299",
+    "TxnAmount": "2100000",
+    "TransactionID": "202301311850360006",
+    "HostTransactionID": "202301311850360006",
+    "Mid": "2",
+    "Tid": "00000100",
+    "DateTime": "20230201122709",
+    "Otp": "293707",
+    "AccessCode": "",
+    "TxnType": "2",
+    "ProductId": "2022091",
+    "ProductSku": "Y15s(3+32G)",
+    "OemId": "1030419120001638",
+    "SchemeId": "10000211",
+    "SchemeDesc": "TESTDPSCHEME",
+    "ImeiNo": "11112222",
+    "EmiAmount": "83900",
+    "Roi": "1045",
+    "TenureMonths": "10",
+    "DownPaymentAmt": "265700"
+}
+
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/customerRest/customerService/createCustomer:
+    post:
+      summary: createCustomer
+      parameters:
+             - in: header
+               name: ServiceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 createCustomer
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                  Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                  {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                MESSAGEID:
+                  type: string
+                customer:
+                  type: object
+                  properties:
+                    coreBankID:
+                      type: string
+                    categoryCode:
+                      type: string
+                    defaultBranch:
+                      type: string
+                    baseCurrency:
+                      type: string
+                    primaryRelationOfficer:
+                      type: string
+                    dedupReq:
+                      type: boolean
+                personalInfo:
+                  type: object
+                  properties:
+                    firstName:
+                      type: string
+                    middleName:
+                      type: string
+                    lastName:
+                      type: string
+                    fatherName:
+                      type: string
+                    salutation:
+                      type: string
+                    language:
+                      type: string
+                    dateofBirth:
+                      type: string
+                    nationality:
+                      type: string
+                    gender:
+                      type: string
+                    maritalStatus:
+                      type: string
+                    type:
+                      type: string
+                    sector:
+                      type: string
+                    industry:
+                      type: string
+                addresses:
+                  type: array
+                  items :
+                   type : object
+                   properties:
+                     addrType:
+                       type: string
+                     buildingNo:
+                       type: string
+                     Street:
+                       type: string
+                     city:
+                       type: string
+                     state:
+                       type: string
+                     addrLine1:
+                       type: string
+                     country:
+                       type: string
+                     pinCode:
+                       type: string
+                     FlatNo:
+                       type: string
+                     priority:
+                       type: number
+                     landmark:
+                       type: string
+                phones:
+                  type: array
+                  items :
+                   type : object
+                   properties:
+                     phoneTypeCode:
+                       type: string
+                     phoneNumber:
+                       type: string
+                     priority:
+                       type: number
+                customersIncome:
+                  type: array
+                  items :
+                   type : object
+                   properties:
+                     incomeExpense:
+                       type: string
+                     category:
+                       type: string
+                     custIncomeType:
+                       type: string
+                     custIncome:
+                       type: number
+                extendedDetails:
+                  type: array
+                  items :
+                   type : object
+                   properties:
+                     extendedFields:
+                       type: array
+                       items :
+                        type : object
+                        properties:
+                          fieldName:
+                            type: string
+                          fieldValue:
+                            type: number
+                documents:
+                  type: array
+                  items :
+                   type : object
+                   properties:
+                     custDocTitle:
+                       type: string
+                     docCategory:
+                       type: string
+                     custDocIssuedCountry:
+                       type: string
+                     docFormat:
+                       type: string
+                     custDocIssuedAuth:
+                       type: string
+                     docRefId:
+                       type: string
+                     docContent:
+                       type: string
+                     docName:
+                       type: string
+            example: {"MESSAGEID":"1661864649840","customer":{"coreBankID":"9845945207","categoryCode":"RETAIL","defaultBranch":"HO","baseCurrency":"INR","primaryRelationOfficer":"30","dedupReq":false},"personalInfo":{"firstName":"SURAJ","middleName":"DNYANADEO","lastName":"PATIL","fatherName":"DNYANADEO NARAYAN PATIL","salutation":"MR.","language":"EN","dateofBirth":"1990-04-20T00:00:00+00:00","nationality":"IN","gender":"M","maritalStatus":"S","type":"1","sector":"15","industry":"15"},"addresses":[{"addrType":"CURRES","buildingNo":"H NO-384/B,AT-SURUNG PADA,TAL-URAN,DIST-RAIGAD","Street":"H NO-384/B,AT-SURUNG PADA,TAL-URAN,DIST-RAIGAD","city":"RAG","state":"MH","addrLine1":"DHUTUM","country":"IN","pinCode":"400702","FlatNo":null,"priority":5,"landmark":"DHUTUM"},{"addrType":"PER","buildingNo":"H NO-384/B,AT-SURUNG PADA,TAL-URAN,DIST-RAIGAD","Street":"H NO-384/B,AT-SURUNG PADA,TAL-URAN,DIST-RAIGAD","addrLine1":"DHUTUM","city":"RAG","state":"MH","country":"IN","pinCode":"400702","FlatNo":null,"priority":4,"landmark":"DHUTUM"}],"phones":[{"phoneTypeCode":"MOBILE","phoneNumber":"9630000000","priority":5}],"customersIncome":[{"incomeExpense":"INCOME","category":"SALARIED","custIncomeType":"SHI107","custIncome":5000000}],"extendedDetails":[{"extendedFields":[{"fieldName":"SANCTIONEDAMOUNT","fieldValue":8000000},{"fieldName":"SANCTIONEXPIRYDATE","fieldValue":"2024-08-30T13:00:15+00:00"},{"fieldName":"OCCUPATIONTYPE","fieldValue":"Salaried"},{"fieldName":"MOTHERFNAME","fieldValue":"MOM"},{"fieldName":"MOTHERLNAME","fieldValue":"MOM"},{"fieldName":"FATHERFNAME","fieldValue":"DNYANADEO"},{"fieldName":"FATHERLNAME","fieldValue":"PATIL"},{"fieldName":"OCCUPATIONSUBTYPE","fieldValue":"102"},{"fieldName":"POADOCUMENTTYPE","fieldValue":"DL"},{"fieldName":"POANUMBER","fieldValue":"MH0620090018086"},{"fieldName":"CHANNEL","fieldValue":2},{"fieldName":"IPADDRESS","fieldValue":"114.143.141.94"},{"fieldName":"FOS","fieldValue":"9821708833"}]}],"documents":[{"custDocTitle":"ALWPG5929K","docCategory":"03","custDocIssuedCountry":"IN","docFormat":"IMG","custDocIssuedAuth":"department","docRefId":"03","docContent":"","docName":"Pan.png"}]}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/limitRest/limitService/createLimitSetup:
+    post:
+      summary: createLimitSetUp
+      parameters:
+             - in: header
+               name: ServiceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 createLimitSetup
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                 Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                cif:
+                  type: string
+                structureCode:
+                  type: string
+                ccy:
+                  type: string
+                expiryDate:
+                  type: string
+                remarks:
+                  type: string
+                active:
+                  type: boolean
+                limitDetail:
+                  type: array
+                  items :
+                   type : object
+                   properties:
+                     structureDetailId:
+                       type: number
+                     expiryDate:
+                       type: string
+                     limitCheck:
+                       type: boolean
+                     limitChkMethod:
+                       type: string
+                     limitSanctioned:
+                       type: number
+            example: {
+  "cif": "10005692",
+  "structureCode": "CD1",
+  "ccy": "INR",
+  "expiryDate": "2024-09-12T08:58:47+00:00",
+  "remarks": "Create Limit setup from API Modified",
+  "active": true,
+  "limitDetail": [
+    {
+      "structureDetailId": 91,
+      "expiryDate": "2024-09-12T08:58:47+00:00",
+      "limitCheck": true,
+      "limitChkMethod": "A",
+      "limitSanctioned": 80000
+    },
+    {
+      "structureDetailId": 92,
+      "expiryDate": "2024-09-12T08:58:47+00:00",
+      "limitCheck": true,
+      "limitChkMethod": "A",
+      "limitSanctioned": 100000
+    },
+    {
+      "structureDetailId": 93,
+      "expiryDate": "2024-09-12T08:58:47+00:00",
+      "limitCheck": true,
+      "limitChkMethod": "A",
+      "limitSanctioned": 100000
+    },
+    {
+      "structureDetailId": 94,
+      "expiryDate": "2024-09-12T08:58:47+00:00",
+      "limitCheck": true,
+      "limitChkMethod": "A",
+      "limitSanctioned": 0
+    },
+    {
+      "structureDetailId": 109,
+      "expiryDate": "2024-09-12T08:58:47+00:00",
+      "limitCheck": true,
+      "limitChkMethod": "A",
+      "limitSanctioned": 20000
+    }
+  ]
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/limitRest/limitService/updateLimitSetup:
+    post:
+      summary: UpdateLimitSetup
+      parameters:
+             - in: header
+               name: ServiceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 updateLimitSetup
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                 Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                limitId:
+                  type: string
+                cif:
+                  type: string
+                customerGroup:
+                  type: string
+                structureCode:
+                  type: string
+                expiryDate:
+                  type: string
+                reviewDate:
+                  type: string
+                remarks:
+                  type: string
+                active:
+                  type: boolean
+                limitDetail:
+                  type: array
+                  items :
+                   type : object
+                   properties:
+                     structureDetailId:
+                       type: number
+                     expiryDate:
+                       type: string
+                     limitCheck:
+                       type: boolean
+                     limitChkMethod:
+                       type: string
+                     limitSanctioned:
+                       type: number
+            example: {
+    "limitId": "123456",
+    "cif": "1230000",
+    "customerGroup": "",
+    "structureCode": "CD1",
+    "expiryDate": "2024-10-24T00:00:00",
+    "reviewDate": "2023-02-01T00:00:00",
+    "remarks": "Update Limit setup from API Modified",
+    "active": true,
+    "limitDetail": [
+        {
+            "structureDetailId": 91,
+            "expiryDate": "2024-10-24T00:00:00",
+            "limitCheck": true,
+            "limitChkMethod": "A",
+            "limitSanctioned": 100000
+        },
+        {
+            "structureDetailId": 109,
+            "expiryDate": "2024-10-24T00:00:00",
+            "limitCheck": true,
+            "limitChkMethod": "A",
+            "limitSanctioned": 100000
+        },
+        {
+            "structureDetailId": 92,
+            "expiryDate": "2024-10-24T00:00:00",
+            "limitCheck": true,
+            "limitChkMethod": "A",
+            "limitSanctioned": 200000
+        },
+        {
+            "structureDetailId": 232,
+            "expiryDate": "2024-10-24T00:00:00",
+            "limitCheck": true,
+            "limitChkMethod": "A",
+            "limitSanctioned": 200000
+        },
+        {
+            "structureDetailId": 233,
+            "expiryDate": "2024-10-24T00:00:00",
+            "limitCheck": true,
+            "limitChkMethod": "A",
+            "limitSanctioned": 300000
+        },
+        {
+            "structureDetailId": 234,
+            "expiryDate": "2024-10-24T00:00:00",
+            "limitCheck": true,
+            "limitChkMethod": "A",
+            "limitSanctioned": 500000
+        },
+        {
+            "structureDetailId": 93,
+            "expiryDate": "2024-10-24T00:00:00",
+            "limitCheck": true,
+            "limitChkMethod": "A",
+            "limitSanctioned": 700000
+        },
+        {
+            "structureDetailId": 94,
+            "expiryDate": "2024-10-24T00:00:00",
+            "limitCheck": true,
+            "limitChkMethod": "A",
+            "limitSanctioned": 0
+        }
+    ]
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms//financeScheduleRest/loanSchedule/createLoanSchedule:
+    post:
+      summary: createLoanSchedule
+      parameters:
+             - in: header
+               name: ServiceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 createLoanSchedule
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                 Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                finReference:
+                  type: string
+                financeDetail:
+                  type: object
+                  properties:
+                    applicationNo:
+                      type: string
+                    cif:
+                      type: string
+                    finType:
+                      type: string
+                    finCcy:
+                      type: string
+                    finBranch:
+                      type: string
+                    profitDaysBasis:
+                      type: string
+                    repayPftRate:
+                      type: number
+                    finAssetValue:
+                      type: number
+                    finAmount:
+                      type: string
+                    finRepayMethod:
+                      type: string
+                    finStartDate:
+                      type: string
+                    numberOfTerms:
+                      type: number
+                    nextRepayDate:
+                      type: string
+            example: {
+"finReference": "",
+"financeDetail": {
+"applicationNo": "",
+"cif": "640",
+"finType": "XPL",
+"finCcy": "INR",
+"finBranch": "HO",
+"profitDaysBasis": "",
+"repayPftRate":14.00,
+"finAssetValue": 5200000,
+"finAmount": "5200000",
+"finRepayMethod": "NACH",
+"finStartDate": "2023-01-18T00:00:00",
+"numberOfTerms": 36,
+"nextRepayDate":"2023-02-02T00:00:00"
+}
+}
+
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/createFinanceRest/finance/getFinanceWithCoreBankId:
+    post:
+      summary: Finance
+      parameters:
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                 Sodel
+             - in: header
+               name: ServiceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 getFinanceWithCoreBankId
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                coreBankId:
+                  type: string
+            example: {
+    "coreBankId":"9137382319"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/applicationMasterRest/applicationMasterService/getBankBranchDetails:
+    post:
+      summary: IFSC
+      parameters:
+             - in: header
+               name: serviceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 getBankBranchDetails
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                 Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                ifsc:
+                  type: string
+            example: {
+    "ifsc":"SBIN0013821"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/mandateRest/mandateService/getMandatesByCustCoreBankId:
+    post:
+      summary: Mandate
+      parameters:
+             - in: header
+               name: serviceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 getMandatesByCustCoreBankId
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                 Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                coreBankId:
+                  type: string
+            example: {
+    "coreBankId":"7522983954"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/mandateRest/mandateService/createMandate:
+    post:
+      summary: Create Mandate
+      parameters:
+             - in: header
+               name: serviceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 createMandate
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                  Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                cif:
+                  type: string
+                docContent:
+                  type: string
+                totEMIAmount:
+                  type: string
+                eMandateReferenceNo:
+                  type: string
+                amtInWords:
+                  type: string
+                mandateRef:
+                  type: string
+                expiryDate:
+                  type: string
+                openMandate:
+                  type: string
+                phoneAreaCode:
+                  type: string
+                mandateType:
+                  type: string
+                jointAccHolderName:
+                  type: string
+                ifsc:
+                  type: string
+                accType:
+                  type: string
+                barcode:
+                  type: string
+                docRefId:
+                  type: string
+                entityCode:
+                  type: string
+                accNumber:
+                  type: string
+                swap:
+                  type: string
+                useExisting:
+                  type: string
+                accHolderName:
+                  type: string
+                active:
+                  type: string
+                documentName:
+                  type: string
+                finReference:
+                  type: string
+                eMandateSource:
+                  type: string
+                phoneNumber:
+                  type: string
+                phoneCountryCode:
+                  type: string
+                maxLimit:
+                  type: string
+                periodicity:
+                  type: string
+                defaultMandate:
+                  type: string
+                startDate:
+                  type: string
+            example: {
+    "cif": "125",
+    "docContent": "",
+    "totEMIAmount": "",
+    "eMandateReferenceNo": "",
+    "amtInWords": "",
+    "mandateRef": "",
+    "expiryDate": "2045-09-30T00:00:00+00:00",
+    "openMandate": "true",
+    "phoneAreaCode": "123",
+    "mandateType": "NACH",
+    "jointAccHolderName": "Rohit",
+    "ifsc": "SBIN0001040",
+    "accType": "11",
+    "barcode": "",
+    "docRefId": "",
+    "entityCode": "MMFSL",
+    "accNumber": "32409198364",
+    "swap": "false",
+    "useExisting": "",
+    "accHolderName": "Rohit b Patil",
+    "active": "",
+    "documentName": "Test",
+    "finReference": "",
+    "eMandateSource": "",
+    "phoneNumber": "7522983954",
+    "phoneCountryCode": "333",
+    "maxLimit": "150000",
+    "periodicity": "M0028",
+    "defaultMandate": "false",
+    "startDate": "2023-02-10T00:00:00+00:00"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/mandateRest/mandateService/getMandatesByCustCoreBankId:
+    post:
+      summary: Fetch Details Mandate
+      parameters:
+             - in: header
+               name: serviceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 getMandatesByCustCoreBankId
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                 Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                PHONENUMBER:
+                  type: string
+            example: {
+    "PHONENUMBER": "9137382319"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/createFinanceRest/finance/finoGetFinance:
+    post:
+      summary: Fino-GetFinance
+      parameters:
+             - in: header
+               name: serviceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 getFinance
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                 Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                mobile:
+                  type: string
+                LAN_number:
+                  type: string
+            example: {
+"mobile":"9137382319",
+"LAN_number":"HO00CD00000253"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /lms/customerRest/customerService/getCustomerDocuments:
+    post:
+      summary: https://dev-connect.mahindrafs.com/lms/customerRest/customerService/getCustomerDocuments
+      parameters:
+             - in: header
+               name: serviceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 getCustomerDocuments
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                 Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                doc_id:
+                  type: number
+            example: {
+    "doc_id": 17
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /otp/createFinanceRest/finance/createFinance:
+    post:
+      summary: https://dev-connect.mahindrafs.com/otp/createFinanceRest/finance/createFinance
+      parameters:
+             - in: header
+               name: ServiceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 createFinance
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                 Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                mobile:
+                  type: string
+                AdditionalInfo:
+                  type: string
+                CardNumber:
+                  type: string
+                CardExpiry:
+                  type: string
+                TxnAmount:
+                  type: number
+                TransactionID:
+                  type: string
+                HostTransactionID:
+                  type: string
+                Mid:
+                  type: string
+                Tid:
+                  type: string
+                DateTime:
+                  type: string
+                AccessCode:
+                  type: string
+                TxnType:
+                  type: string
+                ProductId:
+                  type: number
+                ProductSku:
+                  type: number
+                OemId:
+                  type: string
+                SchemeId:
+                  type: string
+                SchemeDesc:
+                  type: string
+                ImeiNo:
+                  type: string
+                EmiAmount:
+                  type: number
+                Roi:
+                  type: string
+                TenureMonths:
+                  type: string
+                DownPaymentAmt:
+                  type: string
+                Channel:
+                  type: string
+            example: {
+    "mobile": "9795048993",
+    "AdditionalInfo": "null",
+    "CardNumber": "1234",
+    "CardExpiry": "0299",
+    "TxnAmount": 2100000,
+    "TransactionID": "812623158092351",
+    "HostTransactionID": "812623158092351",
+    "Mid": "212121",
+    "Tid": "212122",
+    "DateTime": "20230303145351",
+    "AccessCode": "",
+    "TxnType": "6",
+    "ProductId": 21212101,
+    "ProductSku": 21212101,
+    "OemId": "263",
+    "SchemeId": "2121219",
+    "SchemeDesc": "VAS Test",
+    "ImeiNo": "869296067131254",
+    "EmiAmount": 34700,
+    "Roi": "00",
+    "TenureMonths": "9",
+    "DownPaymentAmt": "00",
+    "Channel":"TMS"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /otp/createFinanceRest/finance/createFinance:
+    post:
+      summary: https://dev-connect.mahindrafs.com/otp/createFinanceRest/finance/createFinance
+      parameters:
+             - in: header
+               name: ServiceName
+               required: true
+               schema:
+                 type: string
+               example:
+                 createFinance
+             - in: header
+               name: channelID
+               required: true
+               schema:
+                 type: string
+               example:
+                 Sodel
+             - in: header
+               name: uniqueRefNo
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$guid}}
+             - in: header
+               name: timestamp
+               required: true
+               schema:
+                 type: string
+               example:
+                 {{$isoTimestamp}}
+            example: {
+    "mobile": "9503443355",
+    "AdditionalInfo": "null",
+    "Channel": "TMS",
+    "CardNumber": "1234",
+    "CardExpiry": "1299",
+    "TxnAmount": 1399900,
+    "nextRepayDate": "2023-04-02T 00:00:00",
+    "TransactionID": "812623158092354",
+    "HostTransactionID": "812623158092315",
+    "Mid": "110033",
+    "Tid": "110044",
+    "DateTime": "20230331145351",
+    "AccessCode": "395177",
+    "TxnType": "6",
+    "ProductId": 10010,
+    "OemId": "1011019124508968",
+    "SchemeId": "10004404",
+    "SchemeDesc": "VAS Test",
+    "ImeiNo": "869296067131254",
+    "EmiAmount": 175500,
+    "Roi": "2975",
+    "TenureMonths": "12",
+    "DownPaymentAmt": "00",
+    
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
