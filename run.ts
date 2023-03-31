@@ -15,8 +15,12 @@ data=JSON.parse(data)
    if(!input){
       input=data
    }
-   else
-   input=data.item[0]
+   else{
+      input=data.item[0]
+      input.info=data.info
+   }
+
+   
    
    let yamlFilePath='./output/output.yaml'
 //checking path for output yaml file 
@@ -30,7 +34,7 @@ if(verifyOutputPath(path[3])){
 
     
   //writing the file 
-  fs.writeFile(yamlFilePath, getSwaggerData(data), () => {
+  fs.writeFile(yamlFilePath, getSwaggerData(input), () => {
     console.log("\n\n*******     done       *********\n");
     console.log(`Output Path ${yamlFilePath}\n\n`);
     
@@ -39,7 +43,7 @@ if(verifyOutputPath(path[3])){
 });
 }
 else
-console.log("⛔⛔⛔   ERROR   ⛔ ⛔⛔ \nCollection path is not correct\n\n");
+console.log("⛔⛔⛔   ERROR   ⛔ ⛔⛔ \nCollection path is incorrect\n\n");
 
      }catch(e){
         //Printing the error
