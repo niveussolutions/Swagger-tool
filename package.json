@@ -17,7 +17,6 @@
     "typescript": "^5.0.2"
   },
   "dependencies": {
-    "ts-node": "^10.9.1",
-    "xml2js": "^0.4.23"
+    "ts-node": "^10.9.1"
   }
 }
