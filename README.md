@@ -43,7 +43,12 @@ Follow the steps mentioned below to install the tool in your local system
    npm run swagger-converter "/home/niveus/Downloads/example.postman_collection.json" "/home/niveus/Downloads/example_output.yaml"
    ```
 
-### **_NOTE:_**  The requests should be beautified(Can be done with beautify option present in postman) and all the postman requests should be in a single folder and not grouped within the main folder.
+### **_NOTE:_**  
+ 1. The requests should be beautified(Can be done with beautify option present in postman) and all the postman requests should be in a single folder and not grouped within the main folder.
+ 2. Please update the brach once before using the tool with below command.
+ ```sh
+   git pull origin main
+   ```
             
             
 
