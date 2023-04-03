@@ -1,4 +1,4 @@
-> **_NOTE:_**  This is a Node js Tool please check that you have installed Node JS and NPM
+
 <!-- GETTING STARTED -->
 ## Getting Started
 
