@@ -18,7 +18,7 @@ export interface ItemEntity {
 export interface Request {
   method: string;
   header?: (HeaderEntityOrUrlencodedEntityOrVariableEntity1 | null)[] | null;
-  url: Url;
+  url: Url ;
   body?: Body | null;
 }
 export interface HeaderEntityOrUrlencodedEntityOrVariableEntity1 {

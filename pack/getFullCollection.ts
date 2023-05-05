@@ -5,12 +5,20 @@ import { getRawData } from "./RequestBody/Raw Data/rawDataWithCondition";
 import { generateFormData } from "./RequestBody/Form-Data/geanerateFormData";
 import { PostmanCollection } from "./interface/interface";
 import { generateUrlEncoded } from "./RequestBody/Form-urlencoded/geanerateUrlEncoded";
+import { log } from "console";
+import { URL } from "url";
 
 function genAllPath(allRequestArray:any){
     let output="";
     output
     allRequestArray.forEach((element:any) => {
-        let path ="/"+element?.request?.url?.path.join("/"); // Formatting the path
+      let path=""
+      if(element?.request?.url?.path)
+         path ="/"+element?.request?.url?.path.join("/"); // Formatting the path
+      else{
+        let url=new URL(element?.request?.url)
+        path=url.pathname;
+      }
         let method=element.request.method.toLocaleLowerCase() // Formatting the Method
         let name=element.name
         
@@ -54,9 +62,16 @@ function getSwaggerData(input:PostmanCollection){
   let title=input.info.name;
   let url:any
   if(input.item){
-   url=input.item[0].request.url.raw
-    url=url.split("/")
-    url=url[0]+"//"+url[2]
+    if(typeof input.item[0].request?.url=== "object"){
+      url=input.item[0].request?.url.raw
+      let data=new URL(input.item[0].request.url.raw)
+       url=data.origin
+    }
+   else{
+    let data=new URL(input.item[0].request.url)
+       url=data.origin
+   }
+   
   }
   let output=""
   output=swaggerTopTemplate({title,url});
