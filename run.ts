@@ -2,10 +2,14 @@ import * as fs from 'fs';
 import {  getSwaggerData } from './pack/getFullCollection';
 import { verifyOutputPath } from './pack/utility/utility';
 let path=process.argv
-fs.readFile(path[2],(error,data:any)=>{    
+let inputPath=path[2];
+let outputPath=path[3];
+
+function runProject(inputPath,outputPath){
+fs.readFile(inputPath,(error,data:any)=>{    
      try{
 //Checking that path is exist or not 
-if(fs.existsSync(path[2])){
+if(fs.existsSync(inputPath)){
    
 data=JSON.parse(data)
 
@@ -24,9 +28,9 @@ data=JSON.parse(data)
    
    let yamlFilePath='./output/output.yaml'
 //checking path for output yaml file 
-if(verifyOutputPath(path[3])){
+if(verifyOutputPath(outputPath)){
 
-   yamlFilePath=path[3]
+   yamlFilePath=outputPath;
 }
 
 
@@ -51,3 +55,6 @@ console.log("⛔⛔⛔   ERROR   ⛔ ⛔⛔ \nCollection path is incorrect\n\n")
       console.log("Collection is not correct\n\n");
      }
   })
+
+}
+runProject(inputPath,outputPath);
