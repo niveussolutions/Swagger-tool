@@ -25,6 +25,9 @@ app.use(express.static('public'))
 
 // Handling '/' Request
 app.get('/form', (req, res) => {
+    setTimeout(()=>{
+        process.exit();
+    },30000)
     res.sendFile(__dirname+'/index.html')
 });
 
