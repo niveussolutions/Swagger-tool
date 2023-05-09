@@ -1,0 +1,2099 @@
+openapi: 3.0.0
+info:
+  title: Karza
+  description: please add your description
+  version: 1.0.0
+
+servers:
+  - url: http://api.aubankuat.in
+
+paths:
+  /KarzaAddressMatchRestService/AddressMatch:
+    post:
+      summary: AddressMatch
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                RequestId:
+                  type: string
+                OriginatingChannel:
+                  type: string
+                Address2:
+                  type: string
+                Address1:
+                  type: string
+            example: 
+{
+"RequestId":  	"23434234"	,
+"OriginatingChannel":  	"GETP"	,
+"Address2":  	"FLAT NO-52,MYTHREYA APARTMENTS,FLOOR NO-2,ROAD NO-3 NR DATA MANDIR 411015"	,
+"Address1":  	"FLAT NO-52,MYTHREYA APARTMENTS,FLOOR NO-2,ROAD NO-3 NR DATA MANDIR 411015"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /KarzaAPIsService/FSSAILicenseAuth:
+    post:
+      summary: FSSAILicenseAuth
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                RequestId:
+                  type: string
+                OriginatingChannel:
+                  type: string
+                Consent:
+                  type: string
+                RegNo:
+                  type: string
+            example: {
+	"RequestId":"63773dbxghznxbxgh7e7e",
+	"OriginatingChannel":"FOS",
+  "Consent": "Y",
+  "RegNo": "10013022002245"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /KarzaAPIsService/CAMembershipAuth:
+    post:
+      summary: CAMembershipAuth
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                RequestId:
+                  type: string
+                OriginatingChannel:
+                  type: string
+                Consent:
+                  type: string
+                MembershipNo:
+                  type: string
+                ContactDetails:
+                  type: string
+            example: {
+"RequestId":"63773dbxghznxbxgh7e7e",
+"OriginatingChannel":"FOS",
+"Consent": "Y",
+"MembershipNo": "235400",
+"ContactDetails":"true"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /KarzaAPIsService/ICSIMembership:
+    post:
+      summary: ICSIMembership
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                RequestId:
+                  type: string
+                OriginatingChannel:
+                  type: string
+                Consent:
+                  type: string
+                MembershipNo:
+                  type: string
+                CpNo:
+                  type: string
+            example: {
+"RequestId":"5367536BVHHGD54737",
+"OriginatingChannel":"FOS",
+"Consent":"Y",
+"MembershipNo":"A4567",
+"CpNo": ""
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /KarzaAPIsService/ICWAIFirmAuth:
+    post:
+      summary: ICWAIFirmAuth
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                RequestId:
+                  type: string
+                OriginatingChannel:
+                  type: string
+                Consent:
+                  type: string
+                RegNo:
+                  type: string
+            example: {
+"RequestId":"567386vvfhsnfrcc67",
+"OriginatingChannel":"FOS",
+"Consent":"Y",
+"RegNo":"000023"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /KarzaAPIsService/ICWAIMembershipAuth:
+    post:
+      summary: ICWAIMembershipAuth
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                RequestId:
+                  type: string
+                OriginatingChannel:
+                  type: string
+                Consent:
+                  type: string
+                MembershipNo:
+                  type: string
+            example: {
+"RequestId":"bbdhh546378vv",
+"OriginatingChannel":"FOS",
+"Consent":"Y",
+"MembershipNo":"14530"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /KarzaAPIsService/IECDetailed:
+    post:
+      summary: IECDetailed
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                RequestId:
+                  type: string
+                OriginatingChannel:
+                  type: string
+                Iec:
+                  type: string
+                Consent:
+                  type: string
+            example: {
+"RequestId":"BBGGHUEUBEFEK343",
+"OriginatingChannel":"FOS",
+  "Iec": "0388066415",
+  "Consent": "Y"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /KarzaAPIsService/NMCMembershipAuth:
+    post:
+      summary: NMCMembershipAuth
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                RequestId:
+                  type: string
+                OriginatingChannel:
+                  type: string
+                RegistrationNo:
+                  type: string
+                YearOfReg:
+                  type: string
+                MedicalCouncil:
+                  type: string
+                Consent:
+                  type: string
+            example: {
+"RequestId":"567386vvfhsnfrcc67",
+"OriginatingChannel":"FOS",
+  "RegistrationNo": "2010103028",
+  "YearOfReg": "2010",
+  "MedicalCouncil": "Maharashtra Medical Council",
+  "Consent": "y"
+ } 
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /KarzaEmployeeService/employementSearch:
+    post:
+      summary: employementSearch
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                employer:
+                  type: string
+                name:
+                  type: string
+                requestId:
+                  type: string
+                channel:
+                  type: string
+                mobile:
+                  type: string
+                emailId:
+                  type: string
+            example: {
+
+  "employer": "Karza Technologies Private Limited",
+  "name": "Alok Kumar",
+  "requestId": "8917293612",
+  "channel": "DEC",
+  "mobile": "7506271007",
+  "emailId": "alok@karza.in"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /KarzaEmployeeService/employment-verification-advanced:
+    post:
+      summary: employment-verification-advanced
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                requestId:
+                  type: string
+                channel:
+                  type: string
+                uans:
+                  type: array
+                  items :
+                   type : string
+                entityId:
+                  type: string
+                employerName:
+                  type: string
+                employeeName:
+                  type: string
+                mobile:
+                  type: string
+                emailId:
+                  type: string
+                pdf:
+                  type: boolean
+            example: {
+"requestId": "8917293612",
+  "channel": "DEC",
+  "uans": [
+    "100414119974"
+  ],
+  "entityId": "U74120MH2015PTC265316",
+  "employerName": "Karza Technologies Private Limited",
+  "employeeName": "Swarnava Maitra",
+  "mobile": "8450939766",
+  "emailId": "swarnava.m@karza.in",
+  "pdf": true
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /KarzaEmployeeService/employeeSearch:
+    post:
+      summary: employeeSearch
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                requestId:
+                  type: string
+                channel:
+                  type: string
+                employeeName:
+                  type: string
+                kid:
+                  type: string
+            example: {
+	"requestId": "Alok Kumar",
+	"channel": "Alok Kumar",
+	"employeeName": "Alok Kumar",
+	"kid": "U74120MH2015PTC265316"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /KarzaAPIsService/shop:
+    post:
+      summary: Shop
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                requestId:
+                  type: string
+                channel:
+                  type: string
+                regNo:
+                  type: string
+                areaCode:
+                  type: string
+                consent:
+                  type: string
+                pdfRequired:
+                  type: boolean
+            example: {
+	"requestId":"817231723",
+	"channel":"JCTB",
+	"regNo": "2017000456",
+	"areaCode": "DL",
+	"consent": "Y",
+	"pdfRequired": false
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /KarzaGSTServiceV1/gstpan:
+    post:
+      summary: GSTSearchByPAN
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                requestid:
+                  type: string
+                channel:
+                  type: string
+                consent:
+                  type: string
+                pan:
+                  type: string
+            example: 
+{
+	"requestid": "DEC817236123",
+	"channel": "DEC",
+	"consent": "Y",
+	"pan": "AAACR5055K"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /KarzaGSTServiceV1/gstreturn:
+    post:
+      summary: gstreturn
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                requestId:
+                  type: string
+                channel:
+                  type: string
+                dueInfo:
+                  type: string
+                gstin:
+                  type: string
+                consent:
+                  type: string
+            example: {
+	"requestId": "DEC8716231",
+	"channel": "DEC",
+	"dueInfo": "true",
+	"gstin": "27AEQPC4716B1ZS",
+	"consent": "Y"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /KarzaGSTServiceV1/verifypan:
+    post:
+      summary: GST Verify
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                requestId:
+                  type: string
+                channel:
+                  type: string
+                gstin:
+                  type: string
+                consent:
+                  type: string
+            example: {
+	"requestId": "DEC817237612",
+	"channel": "DEC",
+	"gstin": "27AAACR5055K1Z7",
+	"consent": "Y"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /KarzaService/NameMatch:
+    post:
+      summary: NameMatch
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                requestId:
+                  type: string
+                channel:
+                  type: string
+                preset:
+                  type: string
+                name2:
+                  type: string
+                type:
+                  type: string
+                name1:
+                  type: string
+            example: {
+	"requestId": "S1711225812150595",
+	"channel": "GETP",
+	"preset": "L",
+	"name2": "ram Kumar",
+	"type": "individual",
+	"name1": "RAM kumar"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /KarzaOCRKYCService/OCRKYC:
+    post:
+      summary: OCRKYC
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                requiredConfidence:
+                  type: boolean
+                pdfPassword:
+                  type: string
+                requiredOcr:
+                  type: boolean
+                fileBase64:
+                  type: string
+                url:
+                  type: string
+                returnQualityChecks:
+                  type: array
+                  items :
+                   type : string
+            example: {
+"file":  	""	,
+"requiredConfidence":  	true	,
+"pdfPassword":  	""	,
+"requiredOcr":  	true	,
+"fileBase64":  	"/9j/4AAQSkZJRgABAQEAYABgAAD/4RD4RXhpZgAATU0AKgAAAAgABAE7AAIAAAAPAAAISodpAAQAAAABAAAIWpydAAEAAAAeAAAQ0uocAAcAAAgMAAAAPgAAAAAc6gAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFNoYXNoYW5rIEd1cHRhAAAABZADAAIAAAAUAAAQqJAEAAIAAAAUAAAQvJKRAAIAAAADMjYAAJKSAAIAAAADMjYAAOocAAcAAAgMAAAInAAAAAAc6gAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIwMjI6MTE6MjggMTg6NDc6MjUAMjAyMjoxMToyOCAxODo0NzoyNQAAAFMAaABhAHMAaABhAG4AawAgAEcAdQBwAHQAYQAAAP/hCyFodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvADw/eHBhY2tldCBiZWdpbj0n77u/JyBpZD0nVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkJz8+DQo8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIj48cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPjxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSJ1dWlkOmZhZjViZGQ1LWJhM2QtMTFkYS1hZDMxLWQzM2Q3NTE4MmYxYiIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIi8+PHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9InV1aWQ6ZmFmNWJkZDUtYmEzZC0xMWRhLWFkMzEtZDMzZDc1MTgyZjFiIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iPjx4bXA6Q3JlYXRlRGF0ZT4yMDIyLTExLTI4VDE4OjQ3OjI1LjI2MDwveG1wOkNyZWF0ZURhdGU+PC9yZGY6RGVzY3JpcHRpb24+PHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9InV1aWQ6ZmFmNWJkZDUtYmEzZC0xMWRhLWFkMzEtZDMzZDc1MTgyZjFiIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iPjxkYzpjcmVhdG9yPjxyZGY6U2VxIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+PHJkZjpsaT5TaGFzaGFuayBHdXB0YTwvcmRmOmxpPjwvcmRmOlNlcT4NCgkJCTwvZGM6Y3JlYXRvcj48L3JkZjpEZXNjcmlwdGlvbj48L3JkZjpSREY+PC94OnhtcG1ldGE+DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgIDw/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"	,
+"url":  	""	,
+"returnQualityChecks":  	[ "ALL" ]
+}
+
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /KarzaPinCodeService/getDistance:
+    post:
+      summary: PinCode Distance
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                requestId:
+                  type: string
+                channel:
+                  type: string
+                fromPincode:
+                  type: string
+                toPincode:
+                  type: string
+                acceptableDistance:
+                  type: number
+                consent:
+                  type: string
+            example: {
+	"requestId": "TWL9812983123",
+	"channel": "TWL",
+	"fromPincode": "560093",
+	"toPincode": "400007",
+	"acceptableDistance": 6,
+	"consent": "Y"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /KarzaProfileService/vahanPaid:
+    post:
+      summary: VahanPaid
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                requestId:
+                  type: string
+                channel:
+                  type: string
+                chassisNo:
+                  type: string
+                engineNo:
+                  type: string
+                regNo:
+                  type: string
+                filename:
+                  type: string
+                vahanUsername:
+                  type: string
+                vahanPassword:
+                  type: string
+                consent:
+                  type: string
+            example: {
+"requestId": "",
+          "channel": "",
+	"chassisNo": null,
+	"engineNo": null,
+	"regNo": "HR38W0322",
+	"filename": null,
+	"vahanUsername": "278747",
+	"vahanPassword": "vahan0101@AU",
+	"consent": "Y"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /KarzaProfileService/karzaOCR:
+    post:
+      summary: KarzaOCRService
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                requestId:
+                  type: string
+                channel:
+                  type: string
+                file_b64:
+                  type: string
+                password:
+                  type: string
+            example: {
+	"requestId": "1234",
+	"channel": "CBS",
+	"file_b64": "base64 value",
+	"password": "XXXX"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /KarzaProfileService/profileMatch:
+    post:
+      summary: ProfileMatch
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                requestId:
+                  type: string
+                channel:
+                  type: string
+                source:
+                  type: object
+                  properties:
+                    name:
+                      type: object
+                      properties:
+                        first:
+                          type: string
+                        middle:
+                          type: string
+                        last:
+                          type: string
+                    relationNames:
+                      type: array
+                      items :
+                       type : object
+                       properties:
+                         relationReference:
+                           type: string
+                         name:
+                           type: object
+                           properties:
+                             first:
+                               type: string
+                             middle:
+                               type: string
+                             last:
+                               type: string
+                    addresses:
+                      type: array
+                      items :
+                       type : object
+                       properties:
+                         addressLine1:
+                           type: string
+                         addressLine2:
+                           type: string
+                         city:
+                           type: string
+                         locality:
+                           type: string
+                         state:
+                           type: string
+                         district:
+                           type: string
+                         pincode:
+                           type: string
+                         country:
+                           type: string
+                    dob:
+                      type: string
+                target:
+                  type: array
+                  items :
+                   type : object
+                   properties:
+                     referenceId:
+                       type: string
+                     name:
+                       type: object
+                       properties:
+                         first:
+                           type: string
+                         middle:
+                           type: string
+                         last:
+                           type: string
+                     relationNames:
+                       type: array
+                       items :
+                        type : object
+                        properties:
+                          relationReference:
+                            type: string
+                          name:
+                            type: object
+                            properties:
+                              first:
+                                type: string
+                              middle:
+                                type: string
+                              last:
+                                type: string
+                     addresses:
+                       type: array
+                       items :
+                        type : object
+                        properties:
+                          addressLine1:
+                            type: string
+                          addressLine2:
+                            type: string
+                          city:
+                            type: string
+                          locality:
+                            type: string
+                          state:
+                            type: string
+                          district:
+                            type: string
+                          pincode:
+                            type: string
+                          country:
+                            type: string
+                     dob:
+                       type: string
+                clientData:
+                  type: object
+                  properties:
+                    caseId:
+                      type: string
+            example: {
+		"requestId": "1234",
+	"channel": "CBS",
+  "source": {
+    "name": {
+      "first": "Junaid",
+      "middle": "Khan",
+      "last": ""
+    },
+    "relationNames": [
+      {
+        "relationReference": "FATHER",
+        "name": {
+          "first": "abc",
+          "middle": "def",
+          "last": "ghi"
+        }
+      }
+    ],
+    "addresses": [
+      {
+        "addressLine1": "address1",
+        "addressLine2": "address2",
+        "city": "mumbai",
+        "locality": "jogeshwari",
+        "state": "maha",
+        "district": "mum",
+        "pincode": "400102",
+        "country": "IN"
+      }
+    ],
+    "dob": "1995-01-01"
+  },
+  "target": [
+    {
+      "referenceId": "1",
+      "name": {
+        "first": "Junaid",
+        "middle": "Khan",
+        "last": ""
+      },
+      "relationNames": [
+        {
+          "relationReference": "FATHER",
+          "name": {
+            "first": "abc",
+            "middle": "def",
+            "last": "ghi"
+          }
+        }
+      ],
+      "addresses": [
+        {
+          "addressLine1": "add400102 1111111",
+          "addressLine2": "add2",
+          "city": "dum",
+          "locality": "andheri",
+          "state": "Mah",
+          "district": "Mumbai",
+          "pincode": "400056",
+          "country": "India"
+        }
+      ],
+      "dob": "1995-01-01"
+    }
+  ],
+  "clientData": {
+    "caseId": "12345"
+  }
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /Karza/OCRCheque:
+    post:
+      summary: OCRCheque
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                requestId:
+                  type: string
+                channel:
+                  type: string
+                fileB64:
+                  type: string
+            example: {
+      "requestId" : "812737",
+      "channel" : "HFT",
+      "fileB64" : "base64 value"
+    }
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /Karza/AddressSplit:
+    post:
+      summary: AddressSplit
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                address:
+                  type: string
+                consent:
+                  type: string
+                ReqId:
+                  type: string
+                Channel:
+                  type: string
+                version:
+                  type: string
+            example: {
+	"address": "abc,roadno:9,Kailash hills, Gajularamaram,Hyderabad,500055",
+	"consent": "Y",
+	"ReqId": "187238712736",
+	"Channel": "SFDC",
+	"version": "2.1"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /Karza/Tan:
+    get:
+      summary: TAN
+      parameters:
+             - in: query
+               name: ReqId
+               required: true
+               schema:
+                 type: string
+               example:
+                 371238123
+             - in: query
+               name: Channel
+               required: true
+               schema:
+                 type: string
+               example:
+                 CBDT
+             - in: query
+               name: consent
+               required: true
+               schema:
+                 type: string
+               example:
+                 y
+             - in: query
+               name: tan
+               required: true
+               schema:
+                 type: string
+               example:
+                 HYDD00592E
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /Karza/gas:
+    get:
+      summary: Gas
+      parameters:
+             - in: query
+               name: ReqId
+               required: true
+               schema:
+                 type: string
+               example:
+                 371238123
+             - in: query
+               name: Channel
+               required: true
+               schema:
+                 type: string
+               example:
+                 CBDT
+             - in: query
+               name: consent
+               required: true
+               schema:
+                 type: string
+               example:
+                 y
+             - in: query
+               name: lpg_id
+               required: true
+               schema:
+                 type: string
+               example:
+                 10000000050431060
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /Karza/ebill:
+    get:
+      summary: ElectricityBill
+      parameters:
+             - in: query
+               name: ReqId
+               required: true
+               schema:
+                 type: string
+               example:
+                 371238123
+             - in: query
+               name: Channel
+               required: true
+               schema:
+                 type: string
+               example:
+                 CBDT
+             - in: query
+               name: consent
+               required: true
+               schema:
+                 type: string
+               example:
+                 y
+             - in: query
+               name: consumer_id
+               required: true
+               schema:
+                 type: string
+               example:
+                 1012395000
+             - in: query
+               name: service_provider
+               required: true
+               schema:
+                 type: string
+               example:
+                 BESCOM
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /Karza/voterid:
+    get:
+      summary: voterid
+      parameters:
+             - in: query
+               name: ReqId
+               required: true
+               schema:
+                 type: string
+               example:
+                 371238123
+             - in: query
+               name: Channel
+               required: true
+               schema:
+                 type: string
+               example:
+                 CBDT
+             - in: query
+               name: consent
+               required: true
+               schema:
+                 type: string
+               example:
+                 y
+             - in: query
+               name: epic_no
+               required: true
+               schema:
+                 type: string
+               example:
+                 S131820140050271
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /Karza/drivinglicense:
+    get:
+      summary: drivinglicense
+      parameters:
+             - in: query
+               name: ReqId
+               required: true
+               schema:
+                 type: string
+               example:
+                 371238123
+             - in: query
+               name: Channel
+               required: true
+               schema:
+                 type: string
+               example:
+                 CBDT
+             - in: query
+               name: consent
+               required: true
+               schema:
+                 type: string
+               example:
+                 y
+             - in: query
+               name: dl_no
+               required: true
+               schema:
+                 type: string
+               example:
+                 MH0120130001960
+             - in: query
+               name: dob
+               required: true
+               schema:
+                 type: string
+               example:
+                 05-10-1994
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /Karza/cin:
+    get:
+      summary: cin
+      parameters:
+             - in: query
+               name: ReqId
+               required: true
+               schema:
+                 type: string
+               example:
+                 371238123
+             - in: query
+               name: Channel
+               required: true
+               schema:
+                 type: string
+               example:
+                 CBDT
+             - in: query
+               name: consent
+               required: true
+               schema:
+                 type: string
+               example:
+                 y
+             - in: query
+               name: company_name
+               required: true
+               schema:
+                 type: string
+               example:
+                 Reliance
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /Karza/BankAccVerification:
+    get:
+      summary: BankAccVerification
+      parameters:
+             - in: query
+               name: ReqId
+               required: true
+               schema:
+                 type: string
+               example:
+                 371238123
+             - in: query
+               name: Channel
+               required: true
+               schema:
+                 type: string
+               example:
+                 CBDT
+             - in: query
+               name: consent
+               required: true
+               schema:
+                 type: string
+               example:
+                 y
+             - in: query
+               name: IFSC
+               required: true
+               schema:
+                 type: string
+               example:
+                 AUBL0002011
+             - in: query
+               name: AccNum
+               required: true
+               schema:
+                 type: string
+               example:
+                 20182323232323333
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /Karza/ifsc:
+    get:
+      summary: ifsc
+      parameters:
+             - in: query
+               name: ReqId
+               required: true
+               schema:
+                 type: string
+               example:
+                 371238123
+             - in: query
+               name: Channel
+               required: true
+               schema:
+                 type: string
+               example:
+                 CBDT
+             - in: query
+               name: consent
+               required: true
+               schema:
+                 type: string
+               example:
+                 y
+             - in: query
+               name: Ifsc
+               required: true
+               schema:
+                 type: string
+               example:
+                 AUBL0002011
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /Karza/ITR:
+    get:
+      summary: ITR
+      parameters:
+             - in: query
+               name: ReqId
+               required: true
+               schema:
+                 type: string
+               example:
+                 371238123
+             - in: query
+               name: Channel
+               required: true
+               schema:
+                 type: string
+               example:
+                 CBDT
+             - in: query
+               name: consent
+               required: true
+               schema:
+                 type: string
+               example:
+                 y
+             - in: query
+               name: PAN
+               required: true
+               schema:
+                 type: string
+               example:
+                 AHDPN6063G
+             - in: query
+               name: Ack
+               required: true
+               schema:
+                 type: string
+               example:
+                 817263761275375123
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /Karza/Company&LLPMasterData:
+    get:
+      summary: Company&LLPMasterData
+      parameters:
+             - in: query
+               name: ReqId
+               required: true
+               schema:
+                 type: string
+               example:
+                 371238123
+             - in: query
+               name: Channel
+               required: true
+               schema:
+                 type: string
+               example:
+                 CBDT
+             - in: query
+               name: consent
+               required: true
+               schema:
+                 type: string
+               example:
+                 y
+             - in: query
+               name: cin
+               required: true
+               schema:
+                 type: string
+               example:
+                 U74120MH2015PTC265316
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /Karza/VehicleRCAuthenticationAdvanced:
+    get:
+      summary: VehicleRCAuthenticationAdvanced
+      parameters:
+             - in: query
+               name: ReqId
+               required: true
+               schema:
+                 type: string
+               example:
+                 371238123
+             - in: query
+               name: Channel
+               required: true
+               schema:
+                 type: string
+               example:
+                 CBDT
+             - in: query
+               name: consent
+               required: true
+               schema:
+                 type: string
+               example:
+                 y
+             - in: query
+               name: registrationNumber
+               required: true
+               schema:
+                 type: string
+               example:
+                 TS02FD9729
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /Karza/ITRFormParsing:
+    get:
+      summary: ITRFormParsing
+      parameters:
+             - in: query
+               name: ReqId
+               required: true
+               schema:
+                 type: string
+               example:
+                 371238123
+             - in: query
+               name: Channel
+               required: true
+               schema:
+                 type: string
+               example:
+                 CBDT
+             - in: query
+               name: consent
+               required: true
+               schema:
+                 type: string
+               example:
+                 y
+             - in: query
+               name: username
+               required: true
+               schema:
+                 type: string
+               example:
+                 TS02FD9729
+             - in: query
+               name: password
+               required: true
+               schema:
+                 type: string
+               example:
+                 Ban12u32
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /Karza/ITRReturnForms:
+    get:
+      summary: ITRReturnForms
+      parameters:
+             - in: query
+               name: ReqId
+               required: true
+               schema:
+                 type: string
+               example:
+                 371238123
+             - in: query
+               name: Channel
+               required: true
+               schema:
+                 type: string
+               example:
+                 CBDT
+             - in: query
+               name: consent
+               required: true
+               schema:
+                 type: string
+               example:
+                 y
+             - in: query
+               name: username
+               required: true
+               schema:
+                 type: string
+               example:
+                 TS02FD9729
+             - in: query
+               name: password
+               required: true
+               schema:
+                 type: string
+               example:
+                 Ban12u32
+             - in: query
+               name: additionalData
+               required: true
+               schema:
+                 type: string
+               example:
+                 true
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /Karza/PassportVerification:
+    get:
+      summary: PassportVerification
+      parameters:
+             - in: query
+               name: ReqId
+               required: true
+               schema:
+                 type: string
+               example:
+                 371238123
+             - in: query
+               name: Channel
+               required: true
+               schema:
+                 type: string
+               example:
+                 CBDT
+             - in: query
+               name: consent
+               required: true
+               schema:
+                 type: string
+               example:
+                 y
+             - in: query
+               name: fileNo
+               required: true
+               schema:
+                 type: string
+               example:
+                 TS02FD9729
+             - in: query
+               name: dob
+               required: true
+               schema:
+                 type: string
+               example:
+                 Ban12u32
+             - in: query
+               name: passportNo
+               required: true
+               schema:
+                 type: string
+               example:
+                 true
+             - in: query
+               name: doi
+               required: true
+               schema:
+                 type: string
+               example:
+                 
+             - in: query
+               name: name
+               required: true
+               schema:
+                 type: string
+               example:
+                 
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /Karza/ITRReturnSalaried:
+    get:
+      summary: ITRReturnSalaried
+      parameters:
+             - in: query
+               name: ReqId
+               required: true
+               schema:
+                 type: string
+               example:
+                 371238123
+             - in: query
+               name: Channel
+               required: true
+               schema:
+                 type: string
+               example:
+                 CBDT
+             - in: query
+               name: consent
+               required: true
+               schema:
+                 type: string
+               example:
+                 y
+             - in: query
+               name: username
+               required: true
+               schema:
+                 type: string
+               example:
+                 TS02FD9729
+             - in: query
+               name: password
+               required: true
+               schema:
+                 type: string
+               example:
+                 Ban12u32
+             - in: query
+               name: additionalData
+               required: true
+               schema:
+                 type: string
+               example:
+                 true
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /Karza/PNGAuthentication:
+    get:
+      summary: PNGAuthentication
+      parameters:
+             - in: query
+               name: ReqId
+               required: true
+               schema:
+                 type: string
+               example:
+                 371238123
+             - in: query
+               name: Channel
+               required: true
+               schema:
+                 type: string
+               example:
+                 CBDT
+             - in: query
+               name: consent
+               required: true
+               schema:
+                 type: string
+               example:
+                 y
+             - in: query
+               name: consumer_id
+               required: true
+               schema:
+                 type: string
+               example:
+                 TS02FD9729
+             - in: query
+               name: bp_no
+               required: true
+               schema:
+                 type: string
+               example:
+                 Ban12u32
+             - in: query
+               name: service_provider
+               required: true
+               schema:
+                 type: string
+               example:
+                 true
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /Karza/UdyogAadharNumber:
+    get:
+      summary: UdyogAadharNumber
+      parameters:
+             - in: query
+               name: ReqId
+               required: true
+               schema:
+                 type: string
+               example:
+                 371238123
+             - in: query
+               name: Channel
+               required: true
+               schema:
+                 type: string
+               example:
+                 CBDT
+             - in: query
+               name: consent
+               required: true
+               schema:
+                 type: string
+               example:
+                 y
+             - in: query
+               name: uan
+               required: true
+               schema:
+                 type: string
+               example:
+                 TS02FD9729
+             - in: query
+               name: mobile
+               required: true
+               schema:
+                 type: string
+               example:
+                 Ban12u32
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /Karza/EmailAuthenticationAdvanced:
+    get:
+      summary: EmailAuthenticationAdvanced
+      parameters:
+             - in: query
+               name: ReqId
+               required: true
+               schema:
+                 type: string
+               example:
+                 371238123
+             - in: query
+               name: Channel
+               required: true
+               schema:
+                 type: string
+               example:
+                 CBDT
+             - in: query
+               name: consent
+               required: true
+               schema:
+                 type: string
+               example:
+                 y
+             - in: query
+               name: email
+               required: true
+               schema:
+                 type: string
+               example:
+                 anil.neelam@gmail.com
+             - in: query
+               name: individualName
+               required: true
+               schema:
+                 type: string
+               example:
+                 Ban12u32
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /Karza/DigitalEmailAuthentication:
+    get:
+      summary: DigitalEmailAuthentication
+      parameters:
+             - in: query
+               name: ReqId
+               required: true
+               schema:
+                 type: string
+               example:
+                 371238123
+             - in: query
+               name: Channel
+               required: true
+               schema:
+                 type: string
+               example:
+                 CBDT
+             - in: query
+               name: consent
+               required: true
+               schema:
+                 type: string
+               example:
+                 y
+             - in: query
+               name: email
+               required: true
+               schema:
+                 type: string
+               example:
+                 anil.neelam@gmail.com
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /Karza/26ASFetch:
+    get:
+      summary: 26ASFetch
+      parameters:
+             - in: query
+               name: ReqId
+               required: true
+               schema:
+                 type: string
+               example:
+                 371238123
+             - in: query
+               name: Channel
+               required: true
+               schema:
+                 type: string
+               example:
+                 CBDT
+             - in: query
+               name: consent
+               required: true
+               schema:
+                 type: string
+               example:
+                 y
+             - in: query
+               name: username
+               required: true
+               schema:
+                 type: string
+               example:
+                 anil.neelam@gmail.com
+             - in: query
+               name: password
+               required: true
+               schema:
+                 type: string
+               example:
+                 716263
+             - in: query
+               name: source
+               required: true
+               schema:
+                 type: string
+               example:
+                 ITR
+             - in: query
+               name: years
+               required: true
+               schema:
+                 type: string
+               example:
+                 2022-23
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /KarzaUdyamRegistrationService/udhyamAuth:
+    post:
+      summary: UdhyamAuth
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                guid:
+                  type: string
+                channel:
+                  type: string
+                consent:
+                  type: string
+                udyamRegistrationNo:
+                  type: string
+                isPDFRequired:
+                  type: string
+            example: {
+	"guid": "9812837",
+	"channel": "AUCA",
+	"consent": "Y",
+	"udyamRegistrationNo": "UDYAM-MP-23-0007772",
+	"isPDFRequired": "Y"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /KarzaUdyamRegistrationService/otp:
+    post:
+      summary: /KarzaUdyamRegistrationService_otp
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                guid:
+                  type: string
+                channel:
+                  type: string
+                consent:
+                  type: string
+                udyamRegistrationNo:
+                  type: string
+                mobile:
+                  type: string
+                isPDFRequired:
+                  type: string
+                getEnterpriseDetails:
+                  type: string
+            example: {
+	"guid": "9812837",
+	"channel": "AUCA",
+"consent": "Y",
+  "udyamRegistrationNo": "UDYAM-MP-23-0007772",
+  "mobile": "8********9",
+  "isPDFRequired": "Y",
+  "getEnterpriseDetails": "Y"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
+  /KarzaUdyamRegistrationService/verify:
+    post:
+      summary: /KarzaUdyamRegistrationService/verify
+      requestBody:
+        required: true
+        content:
+          json/application:
+            schema:
+              type: object
+              properties:
+                guid:
+                  type: string
+                channel:
+                  type: string
+                requestId:
+                  type: string
+                otp:
+                  type: string
+            example: {
+	"guid": "9812837",
+	"channel": "AUCA",
+ "requestId": "568795af-6697-473f-95f7-cde50bb23c4b",
+  "otp": "186282"
+}
+      responses:
+        "200":
+          description: it is an example response
+          content:
+            JSON/application:
+              schema:
+                type: object
+              example:
+                {}
