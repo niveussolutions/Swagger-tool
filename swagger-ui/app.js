@@ -24,29 +24,39 @@ app.use(express.urlencoded());
 app.use(express.static('public'))
 
 // Handling '/' Request
-app.get('/form', (req, res) => {
+app.get('/getSwagger', (req, res) => {
     setTimeout(()=>{
         process.exit();
-    },30000)
+    },600000)
     res.sendFile(__dirname+'/index.html')
 });
 
-app.post('/form',upload.single('avatar'), (req, res) => {
+app.post('/getSwagger',upload.single('avatar'), (req, res) => {
     // fun()
     console.log("./uploads/"+req.file.path);
     runProject(req.file.path,"req.body.Swagger").then((data)=>{
-        res.send(`<textarea type="text"  name="txtarea" style="font-family: Arial;font-size: 12pt;width:90%;height:95vw;padding: auto">${data.writeData}</textarea>`)
+        res.send(`<h1 style="margin-left: 20%;margin-top: 10%;">Your Swagger Document</h1>
+        <h2 style="margin-left: 20%;">please check this documentation using swagger editor</h2>
+        <div style="width: 90%;height: auto;padding: 5%;">
+            <textarea name="output" style="width: 80%;height: 100%;">${data.writeData}</textarea>
+        </div>
+        `)
     }).catch((err)=>{
         res.send(err)
     });
     setTimeout(()=>{
         process.exit();
-    },30000)
+    },600000)
     
 });
  
 // Server setup
 app.listen(port, () => {
-    console.log(`TypeScript with Express
-         http://localhost:${port}/form`);
+    console.log(`
+    ❗❗ Note :- This session will expire in 10m you need to start it gain with 'npm run swagger-ui' command
+
+    Open this link in your browser ⏬
+
+         http://localhost:${port}/getSwagger
+    `);
 });

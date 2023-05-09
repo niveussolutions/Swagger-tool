@@ -39,7 +39,6 @@ if(verifyOutputPath(outputPath)){
   fs.writeFile(yamlFilePath, writeData, (data) => {
     console.log("\n\n*******     done       *********\n");
     console.log(`Output Path ${yamlFilePath}\n\n`);
-    console.log(data);
     
     resolve({yamlFilePath,writeData});
     // console.log("If response is not in your postman collection an example response will be added automatically\n");
