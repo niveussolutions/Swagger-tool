@@ -8,7 +8,7 @@ function spaces(count:number):string{
     }
     return spaces
      }
-function findDataTypes(data){
+function findDataTypes(data:any,isxml?:any){
         let type: string
         if (data === null) {
             type = "string";
