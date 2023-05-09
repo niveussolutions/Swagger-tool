@@ -1,8 +1,8 @@
-> **_NOTE:_**  This is a Node js Tool please check that you have installed Node JS and NPM
+
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is a Node js ( TypeScript tool ) to generate swagger yaml file by postman collection
+This is a Node JS Tool which can be used to generate swagger documentation by providing postman collection.
 
 ## Prerequisites
 
@@ -16,7 +16,7 @@ it needs Nodejs and NPM
 
 ## Installation
 
-_Below is an steps to install the tool in your 
+Follow the steps mentioned below to install the tool in your local system 
 
    ### use sudo for Ubuntu
 
@@ -24,28 +24,33 @@ _Below is an steps to install the tool in your
    ```sh
    git clone https://github.com/niveussolutions/Swagger-tool.git
    ```
-2. Open the tool  
+2. Change the directory to the cloned repo.
    ```sh
    cd Swagger-tool
    ```
 
-3. Install all the packages like TypeScript  
-   Install Dependency with npm 
+3. Install all the  Dependency with the below command 
    ```sh
    npm install
    ```
-4. Open the terminal inside downloaded Swagger-tool project file
+4. In this step we mention the location of our postman collection along with the destination path and name of our swagger document.
    Run the project
    ```sh
-   npm run swagger-converter "your_postman_collection_path/collection.json"
+   npm run swagger-converter "your_postman_collection_path" "your_output_file_path"
    ```
-   We can optionally add output file path (  path file extension should be .yaml  ) default is   "./output/output.yaml"   (  Which means inside your project folder  ).
-   Run the project
+   Example :
    ```sh
-   npm run swagger-converter "your_postman_collection_path/collection.json" "your_output_file_path/collection.yaml"
+   npm run swagger-converter "/home/niveus/Downloads/example.postman_collection.json" "/home/niveus/Downloads/example_output.yaml"
    ```
-5. If your collection/Collection path is correct it will generate the swagger doc structure inside the out/output.yaml file 
-**_NOTE:_**  output.yaml file is inside your project folder and confirm the structure using swagger once 
+
+### **_NOTE:_**  
+ 1. The requests should be beautified(Can be done with beautify option present in postman) and all the postman requests should be in a single folder and not grouped within the main folder.
+ 2. Please update the brach once before using the tool with below command.
+ ```sh
+   git pull origin main
+   ```
+            
+            
 
 <!-- ROADMAP -->
 ## Roadmap
