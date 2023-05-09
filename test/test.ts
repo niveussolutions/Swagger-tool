@@ -7,14 +7,14 @@ import { log } from 'console';
 const str = `<?xml version="1.0" encoding="UTF-8"?>
 <LoginParams xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
 <key>
-<Passwords1>string</Passwords1>
-<Passwords2>string</Passwords2>
+<Passwords1>string1</Passwords1>
+<Passwords1>string2</Passwords1>
 </key>
 <Data2>string</Data2>
 </LoginParams>`;
 
 parser.parseString(str.replace("\n",""),{explicitArray: false},(err,result)=>{
-  // console.log(JSON.stringify(result));
+  console.log(JSON.stringify(result));
   console.log(getXMLcomp(result,0));
   
   
@@ -92,3 +92,7 @@ let data=
         UserName:
           type: string`
 
+function fun(){
+  console.log("Hii");
+  
+}
