@@ -36,10 +36,10 @@ app.post('/getSwagger',upload.single('avatar'), (req, res) => {
     console.log("./uploads/"+req.file.path);
     runProject(req.file.path,"req.body.Swagger").then((data)=>{
         res.send(`<h1 style="margin-left: 20%;margin-top: 10%;">Your Swagger Document</h1>
-        <h2 style="margin-left: 20%;">please check this documentation using swagger editor</h2>
+        <h2 style="margin-left: 20%;margin-top: 10%;">please check this documentation using swagger editor</h2>
         <div style="width: 90%;height: auto;padding: 5%;">
-            <textarea name="output" style="width: 80%;height: 100%;">${data.writeData}</textarea>
-        </div>
+            <textarea name="output" style="width: 80%;height: 100%;background-color: aquamarine;">${data.writeData}</textarea>
+        </div>        
         `)
     }).catch((err)=>{
         res.send(err)
