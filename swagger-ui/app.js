@@ -60,4 +60,5 @@ app.listen(port, () => {
 
          http://localhost:${port}/getSwagger
     `);
+    open(`http://localhost:${port}/getSwagger`);
 });
