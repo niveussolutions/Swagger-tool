@@ -20,7 +20,7 @@ function deleteRecursively(dir, pattern) {
     }
 }
 
-function getOutputHTML(input){
+function getOutputHTML(input,port){
 return`
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -94,8 +94,11 @@ return`
 	<!--Internal CSS End-->
 </head>
 <!--Body start-->
+
 <h1 >Your Swagger Document</h1>
 <h2 style="margin-left: 26%;">please check this documentation using swagger editor</h2>
+<br>
+<a href="http://localhost:${port}/getSwagger" class="btn btn-primary" style="margin-left: 26%;">Back to Main Page</a>
 		<br>
 		<div class="row">
 			<div class="col-md-3 col-sm-3">
