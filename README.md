@@ -33,13 +33,14 @@ Follow the steps mentioned below to install the tool in your local system
    ```sh
    npm install
    ```
-   ## To run using User Interface
+   # To run using User Interface
    
    4. Run the below Command 
       ```sh
       npm run swagger-ui
       ```
-   ## To run using cli
+      ![plot](./uploads/Screenshot%20from%202023-05-16%2014-57-41.png) 
+   # To run using cli
    4. In this step we mention the location of our postman collection along with the destination path and name of our swagger document.
       Run the project
       ```sh
@@ -49,6 +50,7 @@ Follow the steps mentioned below to install the tool in your local system
       ```sh
       npm run swagger-converter "/home/niveus/Downloads/example.postman_collection.json" "/home/niveus/Downloads/example_output.yaml"
       ```
+      ![plot](./uploads/Screenshot%20from%202023-05-16%2015-03-59.png) 
 
 ### **_NOTE:_**  
  1. The requests should be beautified(Can be done with beautify option present in postman) and all the postman requests should be in a single folder and not grouped within the main folder.
@@ -73,5 +75,5 @@ Follow the steps mentioned below to install the tool in your local system
    - [X] x-www-form-urlencoded
 
 
-    
+
    
