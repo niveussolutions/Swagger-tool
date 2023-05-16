@@ -4,7 +4,7 @@ let {runProject}= require("../run")
 const app =  express();
 const open = require('open');
 const multer  = require('multer')
-const {deleteRecursively,getOutputHTML}= require('./utility/utiliy')
+const deleteRecursively= require('./utility/utiliy')
 const cors = require('cors');
 app.use(cors());
 deleteRecursively("./uploads",/\.json$/);
@@ -36,7 +36,12 @@ app.post('/getSwagger',upload.single('avatar'), (req, res) => {
     // fun()
     console.log("./uploads/"+req.file.path);
     runProject(req.file.path,"req.body.Swagger").then((data)=>{
-        res.send(getOutputHTML(data.writeData))
+        res.send(`<h1 style="margin-left: 20%;margin-top: 10%;">Your Swagger Document</h1>
+        <h2 style="margin-left: 20%;">please check this documentation using swagger editor</h2>
+        <div style="width: 90%;height: auto;padding: 5%;">
+            <textarea name="output" style="width: 80%;height: 100%;">${data.writeData}</textarea>
+        </div>
+        `)
     }).catch((err)=>{
         res.send(err)
     });
