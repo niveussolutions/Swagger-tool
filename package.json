@@ -8,6 +8,7 @@
     "swagger-converter": "npx ts-node runCli.ts",
     "test-xml": "npx ts-node test/test.ts",
     "swagger-ui": "npx ts-node swagger-ui/app.js",
+    "updateTool":"git pull origin main & npm i",
     "build": "tsc"
   },
   "author": "",

@@ -22,7 +22,7 @@ Follow the steps mentioned below to install the tool in your local system
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/niveussolutions/Swagger-tool.git
+    git clone https://github.com/niveussolutions/Swagger-tool.git
    ```
 2. Change the directory to the cloned repo.
    ```sh
@@ -37,7 +37,7 @@ Follow the steps mentioned below to install the tool in your local system
    
    4. Run the below Command 
       ```sh
-      npm run swagger-ui
+         npm run swagger-ui
       ```
       ## Upload your postman collection
 
@@ -60,14 +60,11 @@ Follow the steps mentioned below to install the tool in your local system
 
 ### **_NOTE:_**  
  1. The requests should be beautified(Can be done with beautify option present in postman) and all the postman requests should be in a single folder and not grouped within the main folder.
- 2. Please update the brach once before using the tool with below command.
- ```sh
-   git pull origin main
- ```
- 3. Please update your node modules.
- ```sh
-   npm i
-   ```
+ 2. Please update the tool once before using the tool with below command <br />(should be in swagger-tool directory `!!!!` Command to open the directory :- `cd swagger-tool ` ).
+   ```sh
+   npm run updateTool
+   ```   
+   
             
             
 
