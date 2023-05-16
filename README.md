@@ -39,7 +39,13 @@ Follow the steps mentioned below to install the tool in your local system
       ```sh
       npm run swagger-ui
       ```
+      ## Upload your postman collection
+
       ![plot](./uploads/Screenshot%20from%202023-05-16%2014-57-41.png) 
+
+      ## Copy your swagger output
+
+      ![plot](./uploads/Screenshot%20from%202023-05-16%2015-34-41.png) 
    # To run using cli
    4. In this step we mention the location of our postman collection along with the destination path and name of our swagger document.
       Run the project
@@ -57,6 +63,10 @@ Follow the steps mentioned below to install the tool in your local system
  2. Please update the brach once before using the tool with below command.
  ```sh
    git pull origin main
+ ```
+ 3. Please update your node modules.
+ ```sh
+   npm i
    ```
             
             
