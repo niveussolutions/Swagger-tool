@@ -68,11 +68,23 @@
 		}
 	</style>
 	<!--Internal CSS End-->
+	<script>
+		function copy() {
+		let textarea = document.getElementById("textarea1");
+		textarea.disabled=false;
+		textarea.select();
+		document.execCommand("copy");
+		textarea.disabled=true;
+	  }
+	</script>
 </head>
 <!--Body start-->
 
 <h1 >Your Swagger Document</h1>
 <h2 style="margin-left: 26%;">please check this documentation using swagger editor</h2>
+<br>
+<a href="http://localhost:${port}/getSwagger" class="btn btn-primary" style="margin-left: 26%;">Back to Main Page</a> &nbsp; <a  class="btn btn-outline-danger" onclick="copy()">Copy</a>
+		<br>
 		<br>
 		<div class="row">
 			<div class="col-md-3 col-sm-3">
@@ -84,8 +96,7 @@
 							name="name"
 							rows="40"
 							cols="800"
-							placeholder="Your text here ">
-					</textarea>
+							placeholder="Your text here " disabled >${input}</textarea>
 				</div>
 			</div>
 			<div class="col-md-3">
@@ -94,7 +105,7 @@
 	</section>
 	<br>
 	<br>
-	<h6 style="text-align:center;">Contributor  Jha 2021.</h6>
+	<h6 style="text-align:center;"> Contributor: K.V.Rao 2023.</h6>
 
 	<!--External JavaScript file-->
 	<script src="home.js"></script>
