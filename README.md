@@ -1,86 +1,68 @@
 
-<!-- GETTING STARTED -->
 ## Getting Started
 
-This is a Node JS Tool which can be used to generate swagger documentation by providing postman collection.
+This Node.js tool generates Swagger documentation from a Postman collection.
 
-## Prerequisites
+### Prerequisites
 
-it needs Nodejs and NPM
-  ### Nodejs and NPM installation guide 
+Make sure you have Node.js and NPM installed. If not, you can follow these installation guides:
 
-  1. For Ubuntu/Linux [Click](https://www.geeksforgeeks.org/installation-of-node-js-on-linux/)
+- For Ubuntu/Linux, [click here](https://www.geeksforgeeks.org/installation-of-node-js-on-linux/).
 
-  2. For Windows [Click](https://www.geeksforgeeks.org/installation-of-node-js-on-windows/)
-   
+- For Windows, [click here](https://www.geeksforgeeks.org/installation-of-node-js-on-windows/).
 
-## Installation
+### Installation
 
-Follow the steps mentioned below to install the tool in your local system 
+Follow these steps to install the tool on your local system:
 
-   ### use sudo for Ubuntu
-
-1. Clone the repo
+1. Clone the repository:
    ```sh
-    git clone https://github.com/niveussolutions/Swagger-tool.git
+   git clone https://github.com/niveussolutions/Swagger-tool.git
    ```
-2. Change the directory to the cloned repo.
+
+2. Change to the cloned repo directory:
    ```sh
    cd Swagger-tool
    ```
 
-3. Install all the  Dependency with the below command 
+3. Install all dependencies:
    ```sh
    npm install
    ```
-   # To run using User Interface
+
+#### To run using User Interface
+
+4. Run the following command:
+   ```sh
+   npm run swagger-ui
+   ```
+
+   - **Upload your Postman collection:**
    
-   4. Run the below Command 
-      ```sh
-         npm run swagger-ui
-      ```
-      ## Upload your postman collection
+     ![Upload Postman Collection](./uploads/Screenshot%20from%202023-05-16%2014-57-41.png)
 
-      ![plot](./uploads/Screenshot%20from%202023-05-16%2014-57-41.png) 
+   - **Copy your Swagger output:**
+   
+     ![Copy Swagger Output](./uploads/Screenshot%20from%202023-05-16%2015-34-41.png)
 
-      ## Copy your swagger output
+#### To run using CLI
 
-      ![plot](./uploads/Screenshot%20from%202023-05-16%2015-34-41.png) 
-   # To run using cli
-   4. In this step we mention the location of our postman collection along with the destination path and name of our swagger document.
-      Run the project
-      ```sh
-      npm run swagger-converter "your_postman_collection_path" "your_output_file_path"
-      ```
-      Example :
-      ```sh
-      npm run swagger-converter "/home/niveus/Downloads/example.postman_collection.json" "/home/niveus/Downloads/example_output.yaml"
-      ```
-      ![plot](./uploads/Screenshot%20from%202023-05-16%2015-03-59.png) 
+4. Specify the location of your Postman collection, the destination path, and the name of your Swagger document. Run the project with:
+   ```sh
+   npm run swagger-converter "your_postman_collection_path" "your_output_file_path"
+   ```
+
+   Example:
+   ```sh
+   npm run swagger-converter "/home/niveus/Downloads/example.postman_collection.json" "/home/niveus/Downloads/example_output.yaml"
+   ```
+
+   ![Run CLI](./uploads/Screenshot%20from%202023-05-16%2015-03-59.png)
 
 ### **_NOTE:_**  
- 1. The requests should be beautified(Can be done with beautify option present in postman) and all the postman requests should be in a single folder and not grouped within the main folder.
- 2. Please update the tool once before using the tool with below command <br />(should be in swagger-tool directory `!!!!` Command to open the directory :- `cd swagger-tool ` ).
+1. Ensure that your requests are beautified (you can use the beautify option in Postman), and all Postman requests should be in a single folder, not grouped within the main folder.
+
+2. Before using the tool, update it once by running the following command within the Swagger-tool directory:
    ```sh
    npm run updateTool
-   ```   
-   
-            
-            
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [x] Response
-- [x] Header
-- [x] Query params
-- [x] Request Body
-   - [X] raw
-      - [x] JSON
-      - [ ] XML
-   - [X] form-data
-   - [X] x-www-form-urlencoded
-
-
-
-   
+   ```
